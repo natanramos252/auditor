@@ -1,0 +1,5 @@
+ATA DA ANÁLISE CRÍTICA PELA DIREÇÃO - 15/04/2025
+Participantes: diretoria, gerência de TI, gerência de operações.
+Entradas analisadas: situação das ações de análises críticas anteriores, mudanças em questões externas e internas, desempenho do sistema de gestão de continuidade de negócios, resultados de auditoria e feedback das partes interessadas.
+Decisões: atualizar a análise de impacto nos negócios e os planos de continuidade; ampliar o escopo do SGCN para a filial de Campinas.
+Os resultados desta análise crítica foram comunicados às partes interessadas.

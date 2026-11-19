@@ -1,0 +1,46 @@
+# Uso:  cp .env.example .env && docker compose up --build
+# IA local (Ollama):  docker compose --profile local-llm up --build   (com LLM_PROVIDER=ollama e OLLAMA_URL=http://ollama:11434)
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: auditor
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-auditor}
+      POSTGRES_DB: auditor
+    volumes: [dbdata:/var/lib/postgresql/data]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U auditor"]
+      interval: 5s
+      retries: 10
+
+  api:
+    build: ./backend
+    env_file: [.env]
+    environment:
+      DATABASE_URL: postgresql+psycopg://auditor:${POSTGRES_PASSWORD:-auditor}@db:5432/auditor
+      DATA_DIR: /srv/data
+    volumes: [uploads:/srv/data]
+    extra_hosts: ["host.docker.internal:host-gateway"]  # alcançar serviços rodando na máquina
+    networks: [default, freellmapi]  # enxerga o contêiner "freellmapi" (http://freellmapi:3001/v1)
+    depends_on:
+      db: { condition: service_healthy }
+
+  web:
+    build: ./frontend
+    ports: ["${WEB_PORT:-8080}:8080"]
+    depends_on: [api]
+
+  ollama:
+    image: ollama/ollama:latest
+    profiles: [local-llm]
+    volumes: [ollama:/root/.ollama]
+
+networks:
+  freellmapi:
+    name: freellmapi_default
+    external: true  # criada pelo compose do freellmapi; remova este bloco e a linha "networks" do api se não usar
+
+volumes:
+  dbdata:
+  uploads:
+  ollama:

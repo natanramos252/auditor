@@ -1,0 +1,1415 @@
+{
+ "norm": "ABNT NBR ISO 22301:2020",
+ "version": "1.0",
+ "slots": [
+  {
+   "id": "politica",
+   "name": "Política de Continuidade de Negócios",
+   "description": "Política aprovada pela Alta Direção, com data e versão.",
+   "items": [
+    13,
+    18,
+    19,
+    20
+   ]
+  },
+  {
+   "id": "escopo",
+   "name": "Escopo do SGCN",
+   "description": "Documento que define limites, unidades, produtos e serviços cobertos e exclusões.",
+   "items": [
+    8,
+    9,
+    10,
+    11,
+    12
+   ]
+  },
+  {
+   "id": "contexto",
+   "name": "Análise de contexto e partes interessadas",
+   "description": "SWOT/PESTEL, matriz de partes interessadas e seus requisitos.",
+   "items": [
+    1,
+    2,
+    3,
+    4,
+    5
+   ]
+  },
+  {
+   "id": "legal",
+   "name": "Requisitos legais, regulatórios e contratuais",
+   "description": "Registro de leis, regulações e cláusulas contratuais aplicáveis (ex.: LGPD, SLAs).",
+   "items": [
+    6,
+    7
+   ]
+  },
+  {
+   "id": "papeis",
+   "name": "Organograma e papéis do SGCN",
+   "description": "Organograma, nomeações e responsabilidades de continuidade.",
+   "items": [
+    21,
+    22
+   ]
+  },
+  {
+   "id": "objetivos",
+   "name": "Objetivos e indicadores de continuidade",
+   "description": "Objetivos com metas, indicadores e acompanhamento.",
+   "items": [
+    25,
+    26,
+    27,
+    74,
+    75
+   ]
+  },
+  {
+   "id": "riscos_sgcn",
+   "name": "Riscos e oportunidades do SGCN",
+   "description": "Registro de riscos e oportunidades do sistema de gestão e plano de ação.",
+   "items": [
+    23,
+    24,
+    28
+   ]
+  },
+  {
+   "id": "bia",
+   "name": "Análise de Impacto nos Negócios (BIA)",
+   "description": "Relatório do BIA com MTPD, RTO, atividades prioritárias, recursos e dependências.",
+   "items": [
+    42,
+    43,
+    44,
+    45,
+    46,
+    47
+   ]
+  },
+  {
+   "id": "riscos",
+   "name": "Avaliação de riscos de disrupção",
+   "description": "Relatório de avaliação e tratamento dos riscos que podem interromper atividades prioritárias.",
+   "items": [
+    48,
+    49
+   ]
+  },
+  {
+   "id": "estrategias",
+   "name": "Estratégias e soluções de continuidade",
+   "description": "Estratégias selecionadas, recursos necessários, site alternativo, redundâncias.",
+   "items": [
+    29,
+    50,
+    51,
+    52,
+    53,
+    54
+   ]
+  },
+  {
+   "id": "pcn",
+   "name": "Plano(s) de Continuidade e Recuperação (PCN)",
+   "description": "PCN, planos de resposta a incidentes e de recuperação de TI (DRP).",
+   "items": [
+    56,
+    57,
+    58,
+    61,
+    62,
+    63,
+    64
+   ]
+  },
+  {
+   "id": "comunicacao",
+   "name": "Plano de comunicação e contatos de emergência",
+   "description": "Procedimentos de comunicação em crise, árvore de contatos, alertas.",
+   "items": [
+    34,
+    59,
+    60
+   ]
+  },
+  {
+   "id": "exercicios",
+   "name": "Programa e relatórios de exercícios/testes",
+   "description": "Calendário de testes e relatórios pós-exercício com ações.",
+   "items": [
+    65,
+    66,
+    67,
+    68,
+    69
+   ]
+  },
+  {
+   "id": "treinamento",
+   "name": "Competências, treinamentos e conscientização",
+   "description": "Matriz de competências, listas de presença, certificados, material de treinamento.",
+   "items": [
+    30,
+    31,
+    32,
+    33
+   ]
+  },
+  {
+   "id": "doc_ctrl",
+   "name": "Controle de informação documentada",
+   "description": "Procedimento de controle de documentos, lista mestra, regras de retenção.",
+   "items": [
+    35,
+    36,
+    37,
+    38,
+    39,
+    40
+   ]
+  },
+  {
+   "id": "fornecedores",
+   "name": "Fornecedores críticos e contratos",
+   "description": "Lista de fornecedores críticos, contratos e avaliações de continuidade.",
+   "items": [
+    41,
+    71
+   ]
+  },
+  {
+   "id": "backup",
+   "name": "Backup e testes de restauração",
+   "description": "Política de backup, logs e relatórios de restauração, RPO/RTO de TI.",
+   "items": [
+    55
+   ]
+  },
+  {
+   "id": "auditoria",
+   "name": "Programa e relatórios de auditoria interna",
+   "description": "Programa de auditoria interna, relatórios e acompanhamento de ações.",
+   "items": [
+    76,
+    77,
+    78,
+    79,
+    80,
+    81
+   ]
+  },
+  {
+   "id": "analise_critica",
+   "name": "Atas de análise crítica pela direção",
+   "description": "Atas com entradas e saídas, decisões e comunicação dos resultados.",
+   "items": [
+    14,
+    15,
+    16,
+    17,
+    82,
+    83,
+    84,
+    85
+   ]
+  },
+  {
+   "id": "nc",
+   "name": "Não conformidades e ações corretivas",
+   "description": "Registro de NCs, causa raiz, ações e verificação de eficácia.",
+   "items": [
+    86,
+    87,
+    88,
+    89,
+    90
+   ]
+  },
+  {
+   "id": "pos_incidente",
+   "name": "Relatórios pós-incidente e avaliações",
+   "description": "Análises pós-incidente e avaliações da capacidade de continuidade.",
+   "items": [
+    70,
+    72,
+    73
+   ]
+  }
+ ],
+ "items": [
+  {
+   "n": 1,
+   "clause": "4. Contexto da organização",
+   "clause_no": 4,
+   "subclause": "4.1 Contexto",
+   "question": "Foram determinadas as questões internas e externas que afetam a capacidade de o SGCN atingir seus resultados?",
+   "evidence_examples": "Documento de análise de contexto (SWOT/PESTEL), ata de reunião, registro de revisão",
+   "weight": 1,
+   "blocking": false,
+   "slots": [
+    "contexto"
+   ]
+  },
+  {
+   "n": 2,
+   "clause": "4. Contexto da organização",
+   "clause_no": 4,
+   "subclause": "4.1 Contexto",
+   "question": "Essa análise considera objetivos, produtos/serviços e o apetite a risco da organização?",
+   "evidence_examples": "Documento de análise de contexto (SWOT/PESTEL), ata de reunião, registro de revisão",
+   "weight": 1,
+   "blocking": false,
+   "slots": [
+    "contexto"
+   ]
+  },
+  {
+   "n": 3,
+   "clause": "4. Contexto da organização",
+   "clause_no": 4,
+   "subclause": "4.1 Contexto",
+   "question": "Com que frequência o contexto é revisado?",
+   "evidence_examples": "Documento de análise de contexto (SWOT/PESTEL), ata de reunião, registro de revisão",
+   "weight": 1,
+   "blocking": false,
+   "slots": [
+    "contexto"
+   ]
+  },
+  {
+   "n": 4,
+   "clause": "4. Contexto da organização",
+   "clause_no": 4,
+   "subclause": "4.2 Partes interessadas e requisitos legais",
+   "question": "As partes interessadas pertinentes ao SGCN estão identificadas (clientes, reguladores, fornecedores, funcionários)?",
+   "evidence_examples": "Matriz de partes interessadas com seus requisitos, datada e aprovada",
+   "weight": 1,
+   "blocking": false,
+   "slots": [
+    "contexto"
+   ]
+  },
+  {
+   "n": 5,
+   "clause": "4. Contexto da organização",
+   "clause_no": 4,
+   "subclause": "4.2 Partes interessadas e requisitos legais",
+   "question": "Seus requisitos estão documentados?",
+   "evidence_examples": "Matriz de partes interessadas com seus requisitos, datada e aprovada",
+   "weight": 1,
+   "blocking": false,
+   "slots": [
+    "contexto"
+   ]
+  },
+  {
+   "n": 6,
+   "clause": "4. Contexto da organização",
+   "clause_no": 4,
+   "subclause": "4.2 Partes interessadas e requisitos legais",
+   "question": "Existe processo para identificar, acessar e avaliar requisitos legais e regulamentares sobre continuidade (ex.: LGPD, regulações setoriais, contratos/SLAs)?",
+   "evidence_examples": "Registro/lista de leis e contratos aplicáveis (ex.: LGPD, SLAs), com data de atualização",
+   "weight": 1,
+   "blocking": false,
+   "slots": [
+    "legal"
+   ]
+  },
+  {
+   "n": 7,
+   "clause": "4. Contexto da organização",
+   "clause_no": 4,
+   "subclause": "4.2 Partes interessadas e requisitos legais",
+   "question": "O registro legal está documentado e atualizado?",
+   "evidence_examples": "Registro/lista de leis e contratos aplicáveis (ex.: LGPD, SLAs), com data de atualização",
+   "weight": 1,
+   "blocking": false,
+   "slots": [
+    "legal"
+   ]
+  },
+  {
+   "n": 8,
+   "clause": "4. Contexto da organização",
+   "clause_no": 4,
+   "subclause": "4.3 Escopo",
+   "question": "O escopo do SGCN está documentado e disponível?",
+   "evidence_examples": "Documento de escopo do SGCN aprovado, com justificativa escrita das exclusões",
+   "weight": 2,
+   "blocking": true,
+   "slots": [
+    "escopo"
+   ]
+  },
+  {
+   "n": 9,
+   "clause": "4. Contexto da organização",
+   "clause_no": 4,
+   "subclause": "4.3 Escopo",
+   "question": "O escopo considera localização, tamanho, natureza e complexidade da organização?",
+   "evidence_examples": "Documento de escopo do SGCN aprovado, com justificativa escrita das exclusões",
+   "weight": 1,
+   "blocking": false,
+   "slots": [
+    "escopo"
+   ]
+  },
+  {
+   "n": 10,
+   "clause": "4. Contexto da organização",
+   "clause_no": 4,
+   "subclause": "4.3 Escopo",
+   "question": "Os produtos e serviços incluídos estão identificados?",
+   "evidence_examples": "Documento de escopo do SGCN aprovado, com justificativa escrita das exclusões",
+   "weight": 1,
+   "blocking": false,
+   "slots": [
+    "escopo"
+   ]
+  },
+  {
+   "n": 11,
+   "clause": "4. Contexto da organização",
+   "clause_no": 4,
+   "subclause": "4.3 Escopo",
+   "question": "Há exclusões? Estão justificadas e não afetam a capacidade de continuidade determinada pelo BIA e pela avaliação de riscos?",
+   "evidence_examples": "Documento de escopo do SGCN aprovado, com justificativa escrita das exclusões",
+   "weight": 1,
+   "blocking": false,
+   "slots": [
+    "escopo"
+   ]
+  },
+  {
+   "n": 12,
+   "clause": "4. Contexto da organização",
+   "clause_no": 4,
+   "subclause": "4.4 SGCN",
+   "question": "Os processos do SGCN e suas interações estão estabelecidos, implementados e mantidos?",
+   "evidence_examples": "Mapa de processos do SGCN, manual ou procedimentos do sistema de gestão",
+   "weight": 1,
+   "blocking": false,
+   "slots": [
+    "escopo"
+   ]
+  },
+  {
+   "n": 13,
+   "clause": "5. Liderança",
+   "clause_no": 5,
+   "subclause": "5.1 Liderança e comprometimento",
+   "question": "A Alta Direção estabeleceu política e objetivos alinhados à estratégia?",
+   "evidence_examples": "Atas de reunião da diretoria, orçamento aprovado, comunicados internos, e-mails da liderança",
+   "weight": 1,
+   "blocking": false,
+   "slots": [
+    "politica"
+   ]
+  },
+  {
+   "n": 14,
+   "clause": "5. Liderança",
+   "clause_no": 5,
+   "subclause": "5.1 Liderança e comprometimento",
+   "question": "Os requisitos do SGCN estão integrados aos processos de negócio?",
+   "evidence_examples": "Atas de reunião da diretoria, orçamento aprovado, comunicados internos, e-mails da liderança",
+   "weight": 1,
+   "blocking": false,
+   "slots": [
+    "analise_critica"
+   ]
+  },
+  {
+   "n": 15,
+   "clause": "5. Liderança",
+   "clause_no": 5,
+   "subclause": "5.1 Liderança e comprometimento",
+   "question": "Os recursos necessários (orçamento, pessoas, tecnologia) são fornecidos? Como a Direção comprova?",
+   "evidence_examples": "Atas de reunião da diretoria, orçamento aprovado, comunicados internos, e-mails da liderança",
+   "weight": 1,
+   "blocking": false,
+   "slots": [
+    "analise_critica"
+   ]
+  },
+  {
+   "n": 16,
+   "clause": "5. Liderança",
+   "clause_no": 5,
+   "subclause": "5.1 Liderança e comprometimento",
+   "question": "A Direção comunica a importância da continuidade de negócios?",
+   "evidence_examples": "Atas de reunião da diretoria, orçamento aprovado, comunicados internos, e-mails da liderança",
+   "weight": 1,
+   "blocking": false,
+   "slots": [
+    "analise_critica"
+   ]
+  },
+  {
+   "n": 17,
+   "clause": "5. Liderança",
+   "clause_no": 5,
+   "subclause": "5.1 Liderança e comprometimento",
+   "question": "A Direção apoia os gestores de área no seu papel no SGCN?",
+   "evidence_examples": "Atas de reunião da diretoria, orçamento aprovado, comunicados internos, e-mails da liderança",
+   "weight": 1,
+   "blocking": false,
+   "slots": [
+    "analise_critica"
+   ]
+  },
+  {
+   "n": 18,
+   "clause": "5. Liderança",
+   "clause_no": 5,
+   "subclause": "5.2 Política",
+   "question": "Existe política de continuidade aprovada, adequada ao propósito da organização?",
+   "evidence_examples": "Política de continuidade assinada, com data e versão; prova de divulgação (intranet, mural, e-mail)",
+   "weight": 2,
+   "blocking": true,
+   "slots": [
+    "politica"
+   ]
+  },
+  {
+   "n": 19,
+   "clause": "5. Liderança",
+   "clause_no": 5,
+   "subclause": "5.2 Política",
+   "question": "A política traz estrutura para objetivos, compromisso com requisitos aplicáveis e com a melhoria contínua?",
+   "evidence_examples": "Política de continuidade assinada, com data e versão; prova de divulgação (intranet, mural, e-mail)",
+   "weight": 1,
+   "blocking": false,
+   "slots": [
+    "politica"
+   ]
+  },
+  {
+   "n": 20,
+   "clause": "5. Liderança",
+   "clause_no": 5,
+   "subclause": "5.2 Política",
+   "question": "É comunicada internamente e disponibilizada às partes interessadas quando apropriado?",
+   "evidence_examples": "Política de continuidade assinada, com data e versão; prova de divulgação (intranet, mural, e-mail)",
+   "weight": 1,
+   "blocking": false,
+   "slots": [
+    "politica"
+   ]
+  },
+  {
+   "n": 21,
+   "clause": "5. Liderança",
+   "clause_no": 5,
+   "subclause": "5.3 Papéis e responsabilidades",
+   "question": "Papéis, responsabilidades e autoridades do SGCN estão atribuídos e comunicados?",
+   "evidence_examples": "Organograma, descrição de cargos, documento de nomeação do responsável pelo SGCN, relatórios enviados à diretoria",
+   "weight": 1,
+   "blocking": false,
+   "slots": [
+    "papeis"
+   ]
+  },
+  {
+   "n": 22,
+   "clause": "5. Liderança",
+   "clause_no": 5,
+   "subclause": "5.3 Papéis e responsabilidades",
+   "question": "Há responsável por assegurar a conformidade do SGCN e por reportar seu desempenho à Direção?",
+   "evidence_examples": "Organograma, descrição de cargos, documento de nomeação do responsável pelo SGCN, relatórios enviados à diretoria",
+   "weight": 1,
+   "blocking": false,
+   "slots": [
+    "papeis"
+   ]
+  },
+  {
+   "n": 23,
+   "clause": "6. Planejamento",
+   "clause_no": 6,
+   "subclause": "6.1 Riscos e oportunidades do SGCN",
+   "question": "Foram determinados riscos e oportunidades que afetam a eficácia do SGCN?",
+   "evidence_examples": "Registro de riscos e oportunidades do SGCN, plano de ação com responsáveis e prazos",
+   "weight": 1,
+   "blocking": false,
+   "slots": [
+    "riscos_sgcn"
+   ]
+  },
+  {
+   "n": 24,
+   "clause": "6. Planejamento",
+   "clause_no": 6,
+   "subclause": "6.1 Riscos e oportunidades do SGCN",
+   "question": "Há plano de ação, integração aos processos e avaliação de eficácia dessas ações?",
+   "evidence_examples": "Registro de riscos e oportunidades do SGCN, plano de ação com responsáveis e prazos",
+   "weight": 1,
+   "blocking": false,
+   "slots": [
+    "riscos_sgcn"
+   ]
+  },
+  {
+   "n": 25,
+   "clause": "6. Planejamento",
+   "clause_no": 6,
+   "subclause": "6.2 Objetivos",
+   "question": "Os objetivos de continuidade estão estabelecidos nas funções e níveis pertinentes, coerentes com a política e mensuráveis?",
+   "evidence_examples": "Lista de objetivos com metas, indicadores e acompanhamento; plano de ação por objetivo",
+   "weight": 2,
+   "blocking": true,
+   "slots": [
+    "objetivos"
+   ]
+  },
+  {
+   "n": 26,
+   "clause": "6. Planejamento",
+   "clause_no": 6,
+   "subclause": "6.2 Objetivos",
+   "question": "São monitorados, comunicados e atualizados? Há informação documentada?",
+   "evidence_examples": "Lista de objetivos com metas, indicadores e acompanhamento; plano de ação por objetivo",
+   "weight": 1,
+   "blocking": false,
+   "slots": [
+    "objetivos"
+   ]
+  },
+  {
+   "n": 27,
+   "clause": "6. Planejamento",
+   "clause_no": 6,
+   "subclause": "6.2 Objetivos",
+   "question": "Para cada objetivo: o que será feito, recursos, responsável, prazo e forma de avaliação?",
+   "evidence_examples": "Lista de objetivos com metas, indicadores e acompanhamento; plano de ação por objetivo",
+   "weight": 1,
+   "blocking": false,
+   "slots": [
+    "objetivos"
+   ]
+  },
+  {
+   "n": 28,
+   "clause": "6. Planejamento",
+   "clause_no": 6,
+   "subclause": "6.3 Mudanças",
+   "question": "Mudanças no SGCN são planejadas considerando finalidade, consequências, integridade do sistema, recursos e responsabilidades?",
+   "evidence_examples": "Registros de gestão de mudanças (solicitação, análise de impacto, aprovação)",
+   "weight": 1,
+   "blocking": false,
+   "slots": [
+    "riscos_sgcn"
+   ]
+  },
+  {
+   "n": 29,
+   "clause": "7. Apoio",
+   "clause_no": 7,
+   "subclause": "7.1",
+   "question": "Os recursos para estabelecer, manter e melhorar o SGCN foram determinados e providos?",
+   "evidence_examples": "Orçamento, contratos, alocação de equipe e ferramentas para o SGCN",
+   "weight": 1,
+   "blocking": false,
+   "slots": [
+    "estrategias"
+   ]
+  },
+  {
+   "n": 30,
+   "clause": "7. Apoio",
+   "clause_no": 7,
+   "subclause": "7.2",
+   "question": "As competências necessárias das pessoas com impacto na continuidade estão definidas?",
+   "evidence_examples": "Matriz de competências, currículos, certificados, registros de treinamento",
+   "weight": 1,
+   "blocking": false,
+   "slots": [
+    "treinamento"
+   ]
+  },
+  {
+   "n": 31,
+   "clause": "7. Apoio",
+   "clause_no": 7,
+   "subclause": "",
+   "question": "As pessoas são competentes por educação, treinamento ou experiência? Há registros?",
+   "evidence_examples": "Matriz de competências, currículos, certificados, registros de treinamento",
+   "weight": 1,
+   "blocking": false,
+   "slots": [
+    "treinamento"
+   ]
+  },
+  {
+   "n": 32,
+   "clause": "7. Apoio",
+   "clause_no": 7,
+   "subclause": "7.3",
+   "question": "Os colaboradores conhecem a política de continuidade e seu papel antes, durante e depois de uma disrupção?",
+   "evidence_examples": "Entrevista com amostra de funcionários, lista de presença e material de treinamento/conscientização",
+   "weight": 1,
+   "blocking": false,
+   "slots": [
+    "treinamento"
+   ]
+  },
+  {
+   "n": 33,
+   "clause": "7. Apoio",
+   "clause_no": 7,
+   "subclause": "",
+   "question": "Sabem a implicação de não cumprir os requisitos do SGCN?",
+   "evidence_examples": "Entrevista com amostra de funcionários, lista de presença e material de treinamento/conscientização",
+   "weight": 1,
+   "blocking": false,
+   "slots": [
+    "treinamento"
+   ]
+  },
+  {
+   "n": 34,
+   "clause": "7. Apoio",
+   "clause_no": 7,
+   "subclause": "7.4",
+   "question": "Estão definidos o que, quando, com quem, como e quem comunica, interna e externamente?",
+   "evidence_examples": "Plano de comunicação (o quê, quando, com quem, como e quem), lista de contatos de emergência",
+   "weight": 1,
+   "blocking": false,
+   "slots": [
+    "comunicacao"
+   ]
+  },
+  {
+   "n": 35,
+   "clause": "7. Apoio",
+   "clause_no": 7,
+   "subclause": "7.5",
+   "question": "A informação documentada requerida pela norma e pela organização existe, com identificação, formato e aprovação?",
+   "evidence_examples": "Lista mestra de documentos, controle de versões, permissões de acesso, política de retenção",
+   "weight": 1,
+   "blocking": false,
+   "slots": [
+    "doc_ctrl"
+   ]
+  },
+  {
+   "n": 36,
+   "clause": "7. Apoio",
+   "clause_no": 7,
+   "subclause": "",
+   "question": "Está disponível onde e quando necessário e protegida contra perda de confidencialidade e integridade?",
+   "evidence_examples": "Lista mestra de documentos, controle de versões, permissões de acesso, política de retenção",
+   "weight": 1,
+   "blocking": false,
+   "slots": [
+    "doc_ctrl"
+   ]
+  },
+  {
+   "n": 37,
+   "clause": "7. Apoio",
+   "clause_no": 7,
+   "subclause": "",
+   "question": "Há controle de versão, distribuição, acesso, armazenamento, retenção e descarte?",
+   "evidence_examples": "Lista mestra de documentos, controle de versões, permissões de acesso, política de retenção",
+   "weight": 1,
+   "blocking": false,
+   "slots": [
+    "doc_ctrl"
+   ]
+  },
+  {
+   "n": 38,
+   "clause": "7. Apoio",
+   "clause_no": 7,
+   "subclause": "",
+   "question": "Os planos de continuidade estão acessíveis durante uma disrupção (cópia offline, fora do site principal)?",
+   "evidence_examples": "Observação: plano impresso ou em local alternativo (nuvem, pendrive, cópia fora do prédio principal)",
+   "weight": 1,
+   "blocking": false,
+   "slots": [
+    "doc_ctrl"
+   ]
+  },
+  {
+   "n": 39,
+   "clause": "8. Operação",
+   "clause_no": 8,
+   "subclause": "8.1 Planejamento e controle operacional",
+   "question": "Existem critérios para os processos do SGCN e controle conforme esses critérios?",
+   "evidence_examples": "Procedimentos com critérios definidos, registros de execução, contratos e avaliações de fornecedores",
+   "weight": 1,
+   "blocking": false,
+   "slots": [
+    "doc_ctrl"
+   ]
+  },
+  {
+   "n": 40,
+   "clause": "8. Operação",
+   "clause_no": 8,
+   "subclause": "8.1 Planejamento e controle operacional",
+   "question": "Mudanças planejadas são controladas e as não intencionais são analisadas, com mitigação?",
+   "evidence_examples": "Procedimentos com critérios definidos, registros de execução, contratos e avaliações de fornecedores",
+   "weight": 1,
+   "blocking": false,
+   "slots": [
+    "doc_ctrl"
+   ]
+  },
+  {
+   "n": 41,
+   "clause": "8. Operação",
+   "clause_no": 8,
+   "subclause": "8.1 Planejamento e controle operacional",
+   "question": "Processos terceirizados e a cadeia de suprimentos são controlados?",
+   "evidence_examples": "Procedimentos com critérios definidos, registros de execução, contratos e avaliações de fornecedores",
+   "weight": 1,
+   "blocking": false,
+   "slots": [
+    "fornecedores"
+   ]
+  },
+  {
+   "n": 42,
+   "clause": "8. Operação",
+   "clause_no": 8,
+   "subclause": "8.2 BIA e avaliação de riscos",
+   "question": "Existe processo sistemático de BIA? Foi executado e documentado?",
+   "evidence_examples": "Relatório de BIA com MTPD, RTO, atividades prioritárias, recursos e dependências; critérios de impacto",
+   "weight": 2,
+   "blocking": true,
+   "slots": [
+    "bia"
+   ]
+  },
+  {
+   "n": 43,
+   "clause": "8. Operação",
+   "clause_no": 8,
+   "subclause": "8.2 BIA e avaliação de riscos",
+   "question": "Os tipos e critérios de impacto foram definidos para o contexto da organização?",
+   "evidence_examples": "Relatório de BIA com MTPD, RTO, atividades prioritárias, recursos e dependências; critérios de impacto",
+   "weight": 1,
+   "blocking": false,
+   "slots": [
+    "bia"
+   ]
+  },
+  {
+   "n": 44,
+   "clause": "8. Operação",
+   "clause_no": 8,
+   "subclause": "8.2 BIA e avaliação de riscos",
+   "question": "As atividades que sustentam produtos e serviços foram identificadas?",
+   "evidence_examples": "Relatório de BIA com MTPD, RTO, atividades prioritárias, recursos e dependências; critérios de impacto",
+   "weight": 1,
+   "blocking": false,
+   "slots": [
+    "bia"
+   ]
+  },
+  {
+   "n": 45,
+   "clause": "8. Operação",
+   "clause_no": 8,
+   "subclause": "8.2 BIA e avaliação de riscos",
+   "question": "O MTPD (período máximo tolerável de disrupção) foi determinado para cada atividade?",
+   "evidence_examples": "Relatório de BIA com MTPD, RTO, atividades prioritárias, recursos e dependências; critérios de impacto",
+   "weight": 2,
+   "blocking": true,
+   "slots": [
+    "bia"
+   ]
+  },
+  {
+   "n": 46,
+   "clause": "8. Operação",
+   "clause_no": 8,
+   "subclause": "8.2 BIA e avaliação de riscos",
+   "question": "O RTO foi definido dentro do MTPD, com capacidade mínima aceitável?",
+   "evidence_examples": "Relatório de BIA com MTPD, RTO, atividades prioritárias, recursos e dependências; critérios de impacto",
+   "weight": 2,
+   "blocking": true,
+   "slots": [
+    "bia"
+   ]
+  },
+  {
+   "n": 47,
+   "clause": "8. Operação",
+   "clause_no": 8,
+   "subclause": "8.2 BIA e avaliação de riscos",
+   "question": "As atividades priorizadas, seus recursos e suas dependências (fornecedores, parceiros, interdependências) estão identificados?",
+   "evidence_examples": "Relatório de BIA com MTPD, RTO, atividades prioritárias, recursos e dependências; critérios de impacto",
+   "weight": 1,
+   "blocking": false,
+   "slots": [
+    "bia"
+   ]
+  },
+  {
+   "n": 48,
+   "clause": "8. Operação",
+   "clause_no": 8,
+   "subclause": "8.2 BIA e avaliação de riscos",
+   "question": "Existe processo de avaliação de riscos de disrupção (alinhado à ISO 31000)? Riscos são identificados, analisados, avaliados e priorizados para tratamento?",
+   "evidence_examples": "Relatório de avaliação de riscos de disrupção, plano de tratamento, registro de revisão periódica",
+   "weight": 2,
+   "blocking": true,
+   "slots": [
+    "riscos"
+   ]
+  },
+  {
+   "n": 49,
+   "clause": "8. Operação",
+   "clause_no": 8,
+   "subclause": "8.2 BIA e avaliação de riscos",
+   "question": "BIA e avaliação de riscos são revisados em intervalos planejados e após mudanças significativas?",
+   "evidence_examples": "Relatório de avaliação de riscos de disrupção, plano de tratamento, registro de revisão periódica",
+   "weight": 1,
+   "blocking": false,
+   "slots": [
+    "riscos"
+   ]
+  },
+  {
+   "n": 50,
+   "clause": "8. Operação",
+   "clause_no": 8,
+   "subclause": "8.3 Estratégias e soluções",
+   "question": "Há estratégias que cobrem antes, durante e depois da disrupção?",
+   "evidence_examples": "Documento de estratégias de continuidade, registro de decisão (custo-benefício), lista de recursos necessários",
+   "weight": 1,
+   "blocking": false,
+   "slots": [
+    "estrategias"
+   ]
+  },
+  {
+   "n": 51,
+   "clause": "8. Operação",
+   "clause_no": 8,
+   "subclause": "8.3 Estratégias e soluções",
+   "question": "As estratégias atendem ao RTO, protegem atividades priorizadas, reduzem probabilidade e duração e limitam o impacto?",
+   "evidence_examples": "Documento de estratégias de continuidade, registro de decisão (custo-benefício), lista de recursos necessários",
+   "weight": 1,
+   "blocking": false,
+   "slots": [
+    "estrategias"
+   ]
+  },
+  {
+   "n": 52,
+   "clause": "8. Operação",
+   "clause_no": 8,
+   "subclause": "8.3 Estratégias e soluções",
+   "question": "A seleção considerou apetite a risco e custo-benefício?",
+   "evidence_examples": "Documento de estratégias de continuidade, registro de decisão (custo-benefício), lista de recursos necessários",
+   "weight": 1,
+   "blocking": false,
+   "slots": [
+    "estrategias"
+   ]
+  },
+  {
+   "n": 53,
+   "clause": "8. Operação",
+   "clause_no": 8,
+   "subclause": "8.3 Estratégias e soluções",
+   "question": "Os requisitos de recursos foram determinados para: pessoas, informação/dados, infraestrutura, equipamentos, TIC, transporte/logística, finanças e fornecedores?",
+   "evidence_examples": "Documento de estratégias de continuidade, registro de decisão (custo-benefício), lista de recursos necessários",
+   "weight": 1,
+   "blocking": false,
+   "slots": [
+    "estrategias"
+   ]
+  },
+  {
+   "n": 54,
+   "clause": "8. Operação",
+   "clause_no": 8,
+   "subclause": "8.3 Estratégias e soluções",
+   "question": "As soluções estão implementadas e mantidas (site alternativo, backup, redundância, contratos de contingência)?",
+   "evidence_examples": "Contratos de site alternativo/nuvem, configuração de redundância, logs de backup, relatório de teste de restauração",
+   "weight": 1,
+   "blocking": false,
+   "slots": [
+    "estrategias"
+   ]
+  },
+  {
+   "n": 55,
+   "clause": "8. Operação",
+   "clause_no": 8,
+   "subclause": "8.3 Estratégias e soluções",
+   "question": "**TI:** os RPO/RTO dos sistemas críticos são suportados pelos backups e pela infraestrutura de recuperação? Já foram restaurados com sucesso?",
+   "evidence_examples": "Contratos de site alternativo/nuvem, configuração de redundância, logs de backup, relatório de teste de restauração",
+   "weight": 1,
+   "blocking": false,
+   "slots": [
+    "backup"
+   ]
+  },
+  {
+   "n": 56,
+   "clause": "8. Operação",
+   "clause_no": 8,
+   "subclause": "8.4 Planos e procedimentos",
+   "question": "Existe estrutura de resposta com equipes responsáveis por responder a disrupções?",
+   "evidence_examples": "Documento da estrutura de resposta, lista de equipes e suplentes, registros de treinamento das equipes",
+   "weight": 1,
+   "blocking": false,
+   "slots": [
+    "pcn"
+   ]
+  },
+  {
+   "n": 57,
+   "clause": "8. Operação",
+   "clause_no": 8,
+   "subclause": "8.4 Planos e procedimentos",
+   "question": "Papéis, responsabilidades e relacionamento entre equipes estão definidos? Há titulares e suplentes?",
+   "evidence_examples": "Documento da estrutura de resposta, lista de equipes e suplentes, registros de treinamento das equipes",
+   "weight": 1,
+   "blocking": false,
+   "slots": [
+    "pcn"
+   ]
+  },
+  {
+   "n": 58,
+   "clause": "8. Operação",
+   "clause_no": 8,
+   "subclause": "8.4 Planos e procedimentos",
+   "question": "As equipes sabem avaliar a natureza e extensão da disrupção, decidir a ativação, priorizar (vida em primeiro lugar), monitorar e se comunicar com partes interessadas e mídia?",
+   "evidence_examples": "Documento da estrutura de resposta, lista de equipes e suplentes, registros de treinamento das equipes",
+   "weight": 1,
+   "blocking": false,
+   "slots": [
+    "pcn"
+   ]
+  },
+  {
+   "n": 59,
+   "clause": "8. Operação",
+   "clause_no": 8,
+   "subclause": "8.4 Planos e procedimentos",
+   "question": "Existem procedimentos de aviso e comunicação: interna/externa, uso de alertas de autoridades, meios de comunicação alternativos, registro de incidente, ações e decisões?",
+   "evidence_examples": "Procedimentos de comunicação em crise, árvore de contatos, registro de teste de comunicação",
+   "weight": 1,
+   "blocking": false,
+   "slots": [
+    "comunicacao"
+   ]
+  },
+  {
+   "n": 60,
+   "clause": "8. Operação",
+   "clause_no": 8,
+   "subclause": "8.4 Planos e procedimentos",
+   "question": "Esses procedimentos são exercitados no programa de exercícios?",
+   "evidence_examples": "Procedimentos de comunicação em crise, árvore de contatos, registro de teste de comunicação",
+   "weight": 1,
+   "blocking": false,
+   "slots": [
+    "comunicacao"
+   ]
+  },
+  {
+   "n": 61,
+   "clause": "8. Operação",
+   "clause_no": 8,
+   "subclause": "8.4 Planos e procedimentos",
+   "question": "Os planos de continuidade (PCN) estão documentados e contêm propósito, escopo, objetivos, papéis, critérios de ativação, ações, interdependências, recursos, requisitos de relatório e evacuação?",
+   "evidence_examples": "Plano de continuidade (PCN) com critérios de ativação, papéis, recursos e evacuação; observação do plano acessível",
+   "weight": 2,
+   "blocking": true,
+   "slots": [
+    "pcn"
+   ]
+  },
+  {
+   "n": 62,
+   "clause": "8. Operação",
+   "clause_no": 8,
+   "subclause": "8.4 Planos e procedimentos",
+   "question": "Os planos definem limites/gatilhos de ativação e como manter a entrega de produtos e serviços na capacidade acordada?",
+   "evidence_examples": "Plano de continuidade (PCN) com critérios de ativação, papéis, recursos e evacuação; observação do plano acessível",
+   "weight": 1,
+   "blocking": false,
+   "slots": [
+    "pcn"
+   ]
+  },
+  {
+   "n": 63,
+   "clause": "8. Operação",
+   "clause_no": 8,
+   "subclause": "8.4 Planos e procedimentos",
+   "question": "Tratam o bem-estar das pessoas e a prevenção de perdas adicionais?",
+   "evidence_examples": "Plano de continuidade (PCN) com critérios de ativação, papéis, recursos e evacuação; observação do plano acessível",
+   "weight": 1,
+   "blocking": false,
+   "slots": [
+    "pcn"
+   ]
+  },
+  {
+   "n": 64,
+   "clause": "8. Operação",
+   "clause_no": 8,
+   "subclause": "8.4 Planos e procedimentos",
+   "question": "Existem procedimentos de recuperação para voltar das medidas temporárias à operação normal?",
+   "evidence_examples": "Procedimentos de recuperação documentados, registro de retorno à normalidade em exercício ou incidente",
+   "weight": 1,
+   "blocking": false,
+   "slots": [
+    "pcn"
+   ]
+  },
+  {
+   "n": 65,
+   "clause": "8. Operação",
+   "clause_no": 8,
+   "subclause": "8.5 Programa de exercícios",
+   "question": "Há programa de exercícios e testes planejado? Qual a frequência?",
+   "evidence_examples": "Calendário/programa de exercícios, relatórios pós-exercício, plano de ações corretivas e seu fechamento",
+   "weight": 2,
+   "blocking": true,
+   "slots": [
+    "exercicios"
+   ]
+  },
+  {
+   "n": 66,
+   "clause": "8. Operação",
+   "clause_no": 8,
+   "subclause": "8.5 Programa de exercícios",
+   "question": "Os exercícios têm cenários realistas, escopo e objetivos definidos, e são coerentes com os objetivos do SGCN?",
+   "evidence_examples": "Calendário/programa de exercícios, relatórios pós-exercício, plano de ações corretivas e seu fechamento",
+   "weight": 1,
+   "blocking": false,
+   "slots": [
+    "exercicios"
+   ]
+  },
+  {
+   "n": 67,
+   "clause": "8. Operação",
+   "clause_no": 8,
+   "subclause": "8.5 Programa de exercícios",
+   "question": "Há relatório formal pós-exercício com resultados, recomendações e ações de melhoria?",
+   "evidence_examples": "Calendário/programa de exercícios, relatórios pós-exercício, plano de ações corretivas e seu fechamento",
+   "weight": 1,
+   "blocking": false,
+   "slots": [
+    "exercicios"
+   ]
+  },
+  {
+   "n": 68,
+   "clause": "8. Operação",
+   "clause_no": 8,
+   "subclause": "8.5 Programa de exercícios",
+   "question": "As ações dos exercícios foram implementadas? Há evidência de fechamento?",
+   "evidence_examples": "Calendário/programa de exercícios, relatórios pós-exercício, plano de ações corretivas e seu fechamento",
+   "weight": 1,
+   "blocking": false,
+   "slots": [
+    "exercicios"
+   ]
+  },
+  {
+   "n": 69,
+   "clause": "8. Operação",
+   "clause_no": 8,
+   "subclause": "8.5 Programa de exercícios",
+   "question": "Foram realizados exercícios após mudanças significativas?",
+   "evidence_examples": "Calendário/programa de exercícios, relatórios pós-exercício, plano de ações corretivas e seu fechamento",
+   "weight": 1,
+   "blocking": false,
+   "slots": [
+    "exercicios"
+   ]
+  },
+  {
+   "n": 70,
+   "clause": "8. Operação",
+   "clause_no": 8,
+   "subclause": "8.6 Avaliação da capacidade de continuidade",
+   "question": "BIA, riscos, estratégias, planos e procedimentos são avaliados quanto à adequação e eficácia?",
+   "evidence_examples": "Relatórios de análise crítica, avaliações de fornecedores, relatório pós-incidente, histórico de atualização de documentos",
+   "weight": 1,
+   "blocking": false,
+   "slots": [
+    "pos_incidente"
+   ]
+  },
+  {
+   "n": 71,
+   "clause": "8. Operação",
+   "clause_no": 8,
+   "subclause": "8.6 Avaliação da capacidade de continuidade",
+   "question": "A capacidade de continuidade de parceiros e fornecedores críticos é avaliada?",
+   "evidence_examples": "Relatórios de análise crítica, avaliações de fornecedores, relatório pós-incidente, histórico de atualização de documentos",
+   "weight": 1,
+   "blocking": false,
+   "slots": [
+    "fornecedores"
+   ]
+  },
+  {
+   "n": 72,
+   "clause": "8. Operação",
+   "clause_no": 8,
+   "subclause": "8.6 Avaliação da capacidade de continuidade",
+   "question": "Avalia-se a conformidade com requisitos legais, boas práticas do setor e a própria política?",
+   "evidence_examples": "Relatórios de análise crítica, avaliações de fornecedores, relatório pós-incidente, histórico de atualização de documentos",
+   "weight": 1,
+   "blocking": false,
+   "slots": [
+    "pos_incidente"
+   ]
+  },
+  {
+   "n": 73,
+   "clause": "8. Operação",
+   "clause_no": 8,
+   "subclause": "8.6 Avaliação da capacidade de continuidade",
+   "question": "Após incidentes reais ou ativações houve análise pós-incidente e atualização da documentação?",
+   "evidence_examples": "Relatórios de análise crítica, avaliações de fornecedores, relatório pós-incidente, histórico de atualização de documentos",
+   "weight": 1,
+   "blocking": false,
+   "slots": [
+    "pos_incidente"
+   ]
+  },
+  {
+   "n": 74,
+   "clause": "9. Avaliação de desempenho",
+   "clause_no": 9,
+   "subclause": "9.1 Monitoramento e medição",
+   "question": "O que deve ser monitorado, por quais métodos, quando e por quem está definido?",
+   "evidence_examples": "Painel de indicadores, relatórios de medição, registros de análise dos resultados",
+   "weight": 1,
+   "blocking": false,
+   "slots": [
+    "objetivos"
+   ]
+  },
+  {
+   "n": 75,
+   "clause": "9. Avaliação de desempenho",
+   "clause_no": 9,
+   "subclause": "9.1 Monitoramento e medição",
+   "question": "Os resultados são retidos como evidência e o desempenho do SGCN é avaliado?",
+   "evidence_examples": "Painel de indicadores, relatórios de medição, registros de análise dos resultados",
+   "weight": 1,
+   "blocking": false,
+   "slots": [
+    "objetivos"
+   ]
+  },
+  {
+   "n": 76,
+   "clause": "9. Avaliação de desempenho",
+   "clause_no": 9,
+   "subclause": "9.2 Auditoria interna",
+   "question": "Há programa de auditoria interna com frequência, métodos, responsabilidades e relatórios?",
+   "evidence_examples": "Programa de auditoria interna, relatórios de auditoria, currículo/independência dos auditores, ações corretivas verificadas",
+   "weight": 2,
+   "blocking": true,
+   "slots": [
+    "auditoria"
+   ]
+  },
+  {
+   "n": 77,
+   "clause": "9. Avaliação de desempenho",
+   "clause_no": 9,
+   "subclause": "9.2 Auditoria interna",
+   "question": "O programa considera a importância dos processos e os resultados de auditorias anteriores?",
+   "evidence_examples": "Programa de auditoria interna, relatórios de auditoria, currículo/independência dos auditores, ações corretivas verificadas",
+   "weight": 1,
+   "blocking": false,
+   "slots": [
+    "auditoria"
+   ]
+  },
+  {
+   "n": 78,
+   "clause": "9. Avaliação de desempenho",
+   "clause_no": 9,
+   "subclause": "9.2 Auditoria interna",
+   "question": "Critérios e escopo de cada auditoria estão definidos?",
+   "evidence_examples": "Programa de auditoria interna, relatórios de auditoria, currículo/independência dos auditores, ações corretivas verificadas",
+   "weight": 1,
+   "blocking": false,
+   "slots": [
+    "auditoria"
+   ]
+  },
+  {
+   "n": 79,
+   "clause": "9. Avaliação de desempenho",
+   "clause_no": 9,
+   "subclause": "9.2 Auditoria interna",
+   "question": "Os auditores são objetivos e imparciais (não auditam o próprio trabalho)?",
+   "evidence_examples": "Programa de auditoria interna, relatórios de auditoria, currículo/independência dos auditores, ações corretivas verificadas",
+   "weight": 1,
+   "blocking": false,
+   "slots": [
+    "auditoria"
+   ]
+  },
+  {
+   "n": 80,
+   "clause": "9. Avaliação de desempenho",
+   "clause_no": 9,
+   "subclause": "9.2 Auditoria interna",
+   "question": "Resultados foram reportados aos gestores responsáveis, com registros retidos?",
+   "evidence_examples": "Programa de auditoria interna, relatórios de auditoria, currículo/independência dos auditores, ações corretivas verificadas",
+   "weight": 1,
+   "blocking": false,
+   "slots": [
+    "auditoria"
+   ]
+  },
+  {
+   "n": 81,
+   "clause": "9. Avaliação de desempenho",
+   "clause_no": 9,
+   "subclause": "9.2 Auditoria interna",
+   "question": "As ações corretivas foram executadas sem atraso injustificado e verificadas?",
+   "evidence_examples": "Programa de auditoria interna, relatórios de auditoria, currículo/independência dos auditores, ações corretivas verificadas",
+   "weight": 1,
+   "blocking": false,
+   "slots": [
+    "auditoria"
+   ]
+  },
+  {
+   "n": 82,
+   "clause": "9. Avaliação de desempenho",
+   "clause_no": 9,
+   "subclause": "9.3 Análise crítica pela direção",
+   "question": "A Direção analisa o SGCN em intervalos planejados?",
+   "evidence_examples": "Atas de análise crítica pela direção com entradas e decisões, comunicados dos resultados, ações executadas",
+   "weight": 2,
+   "blocking": true,
+   "slots": [
+    "analise_critica"
+   ]
+  },
+  {
+   "n": 83,
+   "clause": "9. Avaliação de desempenho",
+   "clause_no": 9,
+   "subclause": "9.3 Análise crítica pela direção",
+   "question": "As entradas incluem: ações anteriores, mudanças de contexto, desempenho e tendências (NC, medições, auditorias), feedback das partes interessadas, BIA/riscos, resultados da avaliação de 8.6, riscos não tratados, lições de quase-acidentes e disrupções, oportunidades de melhoria?",
+   "evidence_examples": "Atas de análise crítica pela direção com entradas e decisões, comunicados dos resultados, ações executadas",
+   "weight": 1,
+   "blocking": false,
+   "slots": [
+    "analise_critica"
+   ]
+  },
+  {
+   "n": 84,
+   "clause": "9. Avaliação de desempenho",
+   "clause_no": 9,
+   "subclause": "9.3 Análise crítica pela direção",
+   "question": "As saídas incluem decisões sobre melhoria, mudanças de escopo, atualização de BIA, riscos, estratégias e planos, e como a eficácia dos controles será medida?",
+   "evidence_examples": "Atas de análise crítica pela direção com entradas e decisões, comunicados dos resultados, ações executadas",
+   "weight": 1,
+   "blocking": false,
+   "slots": [
+    "analise_critica"
+   ]
+  },
+  {
+   "n": 85,
+   "clause": "9. Avaliação de desempenho",
+   "clause_no": 9,
+   "subclause": "9.3 Análise crítica pela direção",
+   "question": "Os resultados foram comunicados às partes interessadas e as ações executadas?",
+   "evidence_examples": "Atas de análise crítica pela direção com entradas e decisões, comunicados dos resultados, ações executadas",
+   "weight": 1,
+   "blocking": false,
+   "slots": [
+    "analise_critica"
+   ]
+  },
+  {
+   "n": 86,
+   "clause": "10. Melhoria",
+   "clause_no": 10,
+   "subclause": "",
+   "question": "Ao ocorrer uma não conformidade, a organização reage, controla, corrige e lida com as consequências?",
+   "evidence_examples": "Registro de não conformidades, análise de causa raiz, ações corretivas e verificação de eficácia, indicadores de evolução",
+   "weight": 2,
+   "blocking": true,
+   "slots": [
+    "nc"
+   ]
+  },
+  {
+   "n": 87,
+   "clause": "10. Melhoria",
+   "clause_no": 10,
+   "subclause": "",
+   "question": "A causa raiz é determinada e se verifica se NCs semelhantes existem ou podem ocorrer?",
+   "evidence_examples": "Registro de não conformidades, análise de causa raiz, ações corretivas e verificação de eficácia, indicadores de evolução",
+   "weight": 1,
+   "blocking": false,
+   "slots": [
+    "nc"
+   ]
+  },
+  {
+   "n": 88,
+   "clause": "10. Melhoria",
+   "clause_no": 10,
+   "subclause": "",
+   "question": "A eficácia das ações corretivas é analisada criticamente e o SGCN é alterado quando necessário?",
+   "evidence_examples": "Registro de não conformidades, análise de causa raiz, ações corretivas e verificação de eficácia, indicadores de evolução",
+   "weight": 1,
+   "blocking": false,
+   "slots": [
+    "nc"
+   ]
+  },
+  {
+   "n": 89,
+   "clause": "10. Melhoria",
+   "clause_no": 10,
+   "subclause": "",
+   "question": "Há registros da natureza das NCs, das ações e dos resultados?",
+   "evidence_examples": "Registro de não conformidades, análise de causa raiz, ações corretivas e verificação de eficácia, indicadores de evolução",
+   "weight": 1,
+   "blocking": false,
+   "slots": [
+    "nc"
+   ]
+  },
+  {
+   "n": 90,
+   "clause": "10. Melhoria",
+   "clause_no": 10,
+   "subclause": "",
+   "question": "Há evidência de melhoria contínua da adequação, suficiência e eficácia do SGCN com base em medidas qualitativas e quantitativas?",
+   "evidence_examples": "Registro de não conformidades, análise de causa raiz, ações corretivas e verificação de eficácia, indicadores de evolução",
+   "weight": 1,
+   "blocking": false,
+   "slots": [
+    "nc"
+   ]
+  }
+ ]
+}

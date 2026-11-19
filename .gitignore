@@ -1,0 +1,13 @@
+# segredos e dados locais
+.env
+**/.env
+app/backend/data/
+node_modules/
+dist/
+__pycache__/
+.pytest_cache/
+.venv/
+
+# norma da ABNT: material com direitos autorais, não publicar
+1016989421-ISO-22301-2020.pdf
+1016989421-ISO-22301-2020.txt
