@@ -1,11 +1,17 @@
-# Uso:  cp .env.example .env && docker compose up --build
-# IA local (Ollama):  docker compose --profile local-llm up --build   (com LLM_PROVIDER=ollama e OLLAMA_URL=http://ollama:11434)
+# Auditor ISO 22301 + freellmapi (gateway de IAs gratuitas), já ligados entre si. Nenhuma chave vem no projeto.
+#
+#   docker compose up -d --build        abre o auditor em http://localhost:8080
+#
+# Sem chave de IA o auditor funciona em modo sem IA (busca por palavras). Para ligar a IA, veja o README:
+# gere a chave no painel do freellmapi (http://localhost:3001) e coloque em OPENAI_API_KEY no arquivo .env.
+name: auditor
+
 services:
   db:
     image: postgres:16-alpine
     environment:
       POSTGRES_USER: auditor
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-auditor}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-auditor}  # o banco não é publicado fora da rede do compose
       POSTGRES_DB: auditor
     volumes: [dbdata:/var/lib/postgresql/data]
     healthcheck:
@@ -15,32 +21,65 @@ services:
 
   api:
     build: ./backend
-    env_file: [.env]
+    env_file:
+      - path: .env  # opcional: sem .env tudo usa os padrões abaixo
+        required: false
     environment:
       DATABASE_URL: postgresql+psycopg://auditor:${POSTGRES_PASSWORD:-auditor}@db:5432/auditor
       DATA_DIR: /srv/data
+      # já apontados para o freellmapi deste compose; só a chave falta (OPENAI_API_KEY no .env)
+      LLM_PROVIDER: ${LLM_PROVIDER:-openai}
+      OPENAI_BASE_URL: ${OPENAI_BASE_URL:-http://freellmapi:3001/v1}
+      LLM_MODEL: ${LLM_MODEL:-auto}
+      LLM_CONCURRENCY: ${LLM_CONCURRENCY:-1}  # IAs gratuitas têm limite de uso: 1 chamada por vez
     volumes: [uploads:/srv/data]
-    extra_hosts: ["host.docker.internal:host-gateway"]  # alcançar serviços rodando na máquina
-    networks: [default, freellmapi]  # enxerga o contêiner "freellmapi" (http://freellmapi:3001/v1)
+    extra_hosts: ["host.docker.internal:host-gateway"]  # alcançar serviços rodando na máquina (ex.: Ollama)
     depends_on:
       db: { condition: service_healthy }
+      freellmapi: { condition: service_started }
 
   web:
     build: ./frontend
     ports: ["${WEB_PORT:-8080}:8080"]
     depends_on: [api]
 
+  freellmapi:
+    # Projeto de terceiros (MIT): https://github.com/tashfeenahmed/freellmapi. Uso pessoal; não exponha à internet.
+    image: ${FREELLMAPI_IMAGE:-ghcr.io/tashfeenahmed/freellmapi:latest}
+    # Em produção o freellmapi exige ENCRYPTION_KEY. Em vez de pôr uma chave no projeto, ela é gerada na primeira
+    # execução e guardada no volume de dados (junto do banco que ela protege). Para usar a sua: ENCRYPTION_KEY no .env.
+    command:
+      - sh
+      - -c
+      - |
+        F=/app/server/data/.encryption_key
+        if [ -z "$$ENCRYPTION_KEY" ]; then
+          [ -s "$$F" ] || node -e "process.stdout.write(require('crypto').randomBytes(32).toString('hex'))" > "$$F"
+          chmod 600 "$$F"
+          export ENCRYPTION_KEY="$$(cat "$$F")"
+        fi
+        exec node server/dist/index.js
+    environment:
+      NODE_ENV: production
+      PORT: "3001"
+      ENCRYPTION_KEY: ${ENCRYPTION_KEY:-}
+    ports: ["127.0.0.1:${FREELLMAPI_PORT:-3001}:3001"]  # só a sua máquina acessa o painel
+    volumes: [freellmapi-data:/app/server/data]
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "node", "-e", "fetch('http://127.0.0.1:3001/api/ping').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"]
+      interval: 30s
+      timeout: 5s
+      start_period: 20s
+      retries: 3
+
   ollama:
     image: ollama/ollama:latest
     profiles: [local-llm]
     volumes: [ollama:/root/.ollama]
 
-networks:
-  freellmapi:
-    name: freellmapi_default
-    external: true  # criada pelo compose do freellmapi; remova este bloco e a linha "networks" do api se não usar
-
 volumes:
   dbdata:
   uploads:
+  freellmapi-data:
   ollama:

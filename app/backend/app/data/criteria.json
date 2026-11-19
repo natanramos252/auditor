@@ -1,0 +1,785 @@
+{
+ "1": {
+  "norma": "4.1",
+  "kind": "documento",
+  "criteria": [
+   "Questões externas relevantes identificadas",
+   "Questões internas relevantes identificadas",
+   "Ligadas ao propósito e aos resultados pretendidos do SGCN"
+  ]
+ },
+ "2": {
+  "norma": "4.1",
+  "kind": "documento",
+  "criteria": [
+   "Considera objetivos gerais, produtos e serviços",
+   "Considera o apetite a risco da organização"
+  ]
+ },
+ "3": {
+  "norma": "4.1; 9.3.2 b",
+  "kind": "registro",
+  "criteria": [
+   "Contexto revisado com periodicidade ou após mudanças, com registro"
+  ]
+ },
+ "4": {
+  "norma": "4.2.1 a",
+  "kind": "documento",
+  "criteria": [
+   "Partes interessadas pertinentes ao SGCN identificadas"
+  ]
+ },
+ "5": {
+  "norma": "4.2.1 b",
+  "kind": "documento",
+  "criteria": [
+   "Requisitos de cada parte interessada documentados"
+  ]
+ },
+ "6": {
+  "norma": "4.2.2 a, b",
+  "kind": "documento",
+  "criteria": [
+   "Processo definido para identificar e avaliar requisitos legais e regulamentares",
+   "Requisitos aplicáveis listados (leis, regulações, contratos)",
+   "Requisitos legais e regulamentares considerados na implementação e manutenção do SGCN"
+  ]
+ },
+ "7": {
+  "norma": "4.2.2 c",
+  "kind": "documento",
+  "criteria": [
+   "Registro legal documentado",
+   "Mantido atualizado (data de revisão)"
+  ]
+ },
+ "8": {
+  "norma": "4.3.1",
+  "kind": "documento",
+  "criteria": [
+   "Escopo documentado e disponível",
+   "Considera contexto, partes interessadas, missões, metas e obrigações da organização"
+  ]
+ },
+ "9": {
+  "norma": "4.3.2 a",
+  "kind": "documento",
+  "criteria": [
+   "Partes da organização incluídas, considerando localização, porte e complexidade"
+  ]
+ },
+ "10": {
+  "norma": "4.3.2 b",
+  "kind": "documento",
+  "criteria": [
+   "Produtos e serviços incluídos identificados"
+  ]
+ },
+ "11": {
+  "norma": "4.3.2 (exclusões)",
+  "kind": "documento",
+  "criteria": [
+   "Exclusões documentadas e justificadas",
+   "Exclusões não afetam a capacidade de continuidade (BIA, riscos e requisitos legais)"
+  ]
+ },
+ "12": {
+  "norma": "4.4",
+  "kind": "documento",
+  "criteria": [
+   "Processos do SGCN e suas interações definidos",
+   "SGCN estabelecido, implementado, mantido e melhorado"
+  ]
+ },
+ "13": {
+  "norma": "5.1 a, e",
+  "kind": "documento",
+  "criteria": [
+   "Política e objetivos estabelecidos e alinhados à estratégia",
+   "Alta direção demonstra liderança nas decisões e no apoio",
+   "Direção assegura que o SGCN alcance os resultados pretendidos"
+  ]
+ },
+ "14": {
+  "norma": "5.1 b",
+  "kind": "documento",
+  "criteria": [
+   "Requisitos do SGCN integrados aos processos de negócio"
+  ]
+ },
+ "15": {
+  "norma": "5.1 c",
+  "kind": "documento",
+  "criteria": [
+   "Recursos necessários (orçamento, pessoas, ferramentas) disponibilizados pela direção"
+  ]
+ },
+ "16": {
+  "norma": "5.1 d",
+  "kind": "documento",
+  "criteria": [
+   "Direção comunica a importância da gestão de continuidade eficaz"
+  ]
+ },
+ "17": {
+  "norma": "5.1 f, g, h",
+  "kind": "documento",
+  "criteria": [
+   "Direção dirige e apoia pessoas e gestores a contribuírem com o SGCN",
+   "Direção promove a melhoria contínua"
+  ]
+ },
+ "18": {
+  "norma": "5.2.1 a",
+  "kind": "documento",
+  "criteria": [
+   "Política de continuidade existe",
+   "Adequada ao propósito da organização",
+   "Aprovada pela Alta Direção, com data e versão"
+  ]
+ },
+ "19": {
+  "norma": "5.2.1 b, c, d",
+  "kind": "documento",
+  "criteria": [
+   "Fornece estrutura para os objetivos de continuidade",
+   "Compromisso de satisfazer requisitos aplicáveis",
+   "Compromisso com a melhoria contínua"
+  ]
+ },
+ "20": {
+  "norma": "5.2.2 a, b, c",
+  "kind": "documento",
+  "criteria": [
+   "Política documentada e disponível",
+   "Comunicada na organização",
+   "Disponível às partes interessadas, quando apropriado"
+  ]
+ },
+ "21": {
+  "norma": "5.3",
+  "kind": "documento",
+  "criteria": [
+   "Papéis, responsabilidades e autoridades atribuídos",
+   "Comunicados na organização"
+  ]
+ },
+ "22": {
+  "norma": "5.3 a, b",
+  "kind": "documento",
+  "criteria": [
+   "Responsável por assegurar a conformidade do SGCN com a norma",
+   "Responsável por reportar o desempenho à Alta Direção"
+  ]
+ },
+ "23": {
+  "norma": "6.1.1 a–c",
+  "kind": "documento",
+  "criteria": [
+   "Riscos e oportunidades que afetam a eficácia do SGCN determinados",
+   "Considera o contexto (4.1) e os requisitos das partes interessadas (4.2)",
+   "Visa assegurar os resultados, prevenir ou reduzir efeitos indesejados e alcançar melhoria contínua"
+  ]
+ },
+ "24": {
+  "norma": "6.1.2",
+  "kind": "registro",
+  "criteria": [
+   "Ações para abordar riscos e oportunidades planejadas",
+   "Como integrá-las ao SGCN",
+   "Como avaliar a eficácia dessas ações"
+  ]
+ },
+ "25": {
+  "norma": "6.2.1 a, b, c",
+  "kind": "documento",
+  "criteria": [
+   "Objetivos definidos nas funções e níveis pertinentes",
+   "Coerentes com a política e mensuráveis",
+   "Levam em conta os requisitos aplicáveis (contexto e partes interessadas)"
+  ]
+ },
+ "26": {
+  "norma": "6.2.1 d, e, f",
+  "kind": "registro",
+  "criteria": [
+   "Objetivos monitorados",
+   "Comunicados e atualizados",
+   "Informação documentada retida"
+  ]
+ },
+ "27": {
+  "norma": "6.2.2 a–e",
+  "kind": "documento",
+  "criteria": [
+   "O que será feito",
+   "Recursos necessários",
+   "Responsável",
+   "Prazo",
+   "Como os resultados serão avaliados"
+  ]
+ },
+ "28": {
+  "norma": "6.3",
+  "kind": "documento",
+  "criteria": [
+   "Mudanças no SGCN planejadas",
+   "Consideram consequências, integridade do sistema, recursos e responsabilidades"
+  ]
+ },
+ "29": {
+  "norma": "7.1",
+  "kind": "documento",
+  "criteria": [
+   "Recursos para o SGCN determinados",
+   "Recursos efetivamente fornecidos"
+  ]
+ },
+ "30": {
+  "norma": "7.2 a",
+  "kind": "documento",
+  "criteria": [
+   "Competências necessárias das pessoas determinadas"
+  ]
+ },
+ "31": {
+  "norma": "7.2 b, c, d",
+  "kind": "registro",
+  "criteria": [
+   "Pessoas competentes por educação, treinamento ou experiência",
+   "Ações para adquirir competência quando necessário",
+   "Registros como evidência de competência"
+  ]
+ },
+ "32": {
+  "norma": "7.3 a, b, d",
+  "kind": "registro",
+  "criteria": [
+   "Pessoas conhecem a política de continuidade",
+   "Conhecem sua contribuição para a eficácia do SGCN",
+   "Conhecem seu papel antes, durante e depois de disrupções"
+  ]
+ },
+ "33": {
+  "norma": "7.3 c",
+  "kind": "registro",
+  "criteria": [
+   "Pessoas cientes das implicações de não cumprir os requisitos do SGCN"
+  ]
+ },
+ "34": {
+  "norma": "7.4 a–e",
+  "kind": "documento",
+  "criteria": [
+   "O que comunicar",
+   "Quando",
+   "Com quem",
+   "Como",
+   "Quem comunica"
+  ]
+ },
+ "35": {
+  "norma": "7.5.1; 7.5.2",
+  "kind": "documento",
+  "criteria": [
+   "Informação documentada exigida existe",
+   "Identificação (título, data, autor ou número)",
+   "Formato e meio definidos",
+   "Análise crítica e aprovação"
+  ]
+ },
+ "36": {
+  "norma": "7.5.3.1",
+  "kind": "documento",
+  "criteria": [
+   "Disponível onde e quando necessário",
+   "Protegida contra perda de confidencialidade, uso impróprio e perda de integridade"
+  ]
+ },
+ "37": {
+  "norma": "7.5.3.2",
+  "kind": "documento",
+  "criteria": [
+   "Distribuição, acesso e uso",
+   "Armazenamento e legibilidade",
+   "Controle de alterações e versão",
+   "Retenção e descarte",
+   "Informação documentada de origem externa identificada e controlada"
+  ]
+ },
+ "38": {
+  "norma": "7.5.3.1 a; 8.4.4.3",
+  "kind": "documento",
+  "criteria": [
+   "Planos acessíveis durante uma disrupção (cópia fora do site principal, digital e impressa)"
+  ]
+ },
+ "39": {
+  "norma": "8.1 a, b, c",
+  "kind": "registro",
+  "criteria": [
+   "Critérios estabelecidos para os processos",
+   "Controle conforme os critérios",
+   "Informação documentada de que os processos foram conduzidos como planejado"
+  ]
+ },
+ "40": {
+  "norma": "8.1 (mudanças)",
+  "kind": "registro",
+  "criteria": [
+   "Mudanças planejadas são controladas",
+   "Mudanças não intencionais analisadas e efeitos adversos mitigados"
+  ]
+ },
+ "41": {
+  "norma": "8.1 (terceirizados e cadeia de suprimentos)",
+  "kind": "registro",
+  "criteria": [
+   "Processos terceirizados controlados",
+   "Cadeia de suprimentos controlada"
+  ]
+ },
+ "42": {
+  "norma": "8.2.1 a; 8.2.2",
+  "kind": "documento",
+  "criteria": [
+   "Processo sistemático de BIA definido",
+   "BIA executado e documentado"
+  ]
+ },
+ "43": {
+  "norma": "8.2.2 a",
+  "kind": "documento",
+  "criteria": [
+   "Tipos de impacto definidos para o contexto",
+   "Critérios/escala de impacto definidos"
+  ]
+ },
+ "44": {
+  "norma": "8.2.2 b, c",
+  "kind": "documento",
+  "criteria": [
+   "Atividades que sustentam produtos e serviços identificadas",
+   "Impactos avaliados ao longo do tempo"
+  ]
+ },
+ "45": {
+  "norma": "8.2.2 d (MTPD)",
+  "kind": "documento",
+  "criteria": [
+   "Período máximo tolerável de disrupção (MTPD/MTD) definido para as atividades"
+  ]
+ },
+ "46": {
+  "norma": "8.2.2 e (RTO)",
+  "kind": "documento",
+  "criteria": [
+   "Objetivo de tempo de recuperação (RTO) definido, dentro do MTPD",
+   "Capacidade mínima aceitável especificada"
+  ]
+ },
+ "47": {
+  "norma": "8.2.2 f, g, h",
+  "kind": "documento",
+  "criteria": [
+   "Atividades priorizadas identificadas",
+   "Recursos necessários determinados",
+   "Dependências e interdependências (fornecedores e parceiros) identificadas"
+  ]
+ },
+ "48": {
+  "norma": "8.2.3 a, b, c",
+  "kind": "documento",
+  "criteria": [
+   "Riscos de disrupção das atividades priorizadas identificados",
+   "Riscos analisados e avaliados",
+   "Definido quais riscos exigem tratamento"
+  ]
+ },
+ "49": {
+  "norma": "8.2.1 b",
+  "kind": "registro",
+  "criteria": [
+   "BIA e riscos revisados em intervalos planejados",
+   "Revisados após mudanças significativas"
+  ]
+ },
+ "50": {
+  "norma": "8.3.1",
+  "kind": "documento",
+  "criteria": [
+   "Estratégias para antes, durante e depois da disrupção"
+  ]
+ },
+ "51": {
+  "norma": "8.3.2 a–f",
+  "kind": "documento",
+  "criteria": [
+   "Atendem ao RTO e à capacidade aceitável",
+   "Protegem as atividades priorizadas",
+   "Reduzem a probabilidade de disrupção",
+   "Diminuem o período de disrupção",
+   "Limitam o impacto nos produtos e serviços",
+   "Fornecem a disponibilidade de recursos adequados"
+  ]
+ },
+ "52": {
+  "norma": "8.3.3 a, b, c",
+  "kind": "documento",
+  "criteria": [
+   "Considera o apetite a risco",
+   "Considera custo e benefício",
+   "Decisão de seleção registrada",
+   "Atende aos requisitos de prazo e capacidade aceitável"
+  ]
+ },
+ "53": {
+  "norma": "8.3.4 a–h",
+  "kind": "documento",
+  "criteria": [
+   "Pessoas",
+   "Informações e dados",
+   "Infraestrutura física",
+   "Equipamentos",
+   "Sistemas de TIC",
+   "Transporte e logística",
+   "Finanças",
+   "Parceiros e fornecedores"
+  ]
+ },
+ "54": {
+  "norma": "8.3.5",
+  "kind": "documento",
+  "criteria": [
+   "Soluções de continuidade implementadas",
+   "Mantidas e disponíveis para uso quando necessário"
+  ]
+ },
+ "55": {
+  "norma": "8.3.4 e; 8.3.5",
+  "kind": "registro",
+  "criteria": [
+   "RPO e RTO dos sistemas críticos definidos",
+   "Backup e infraestrutura de recuperação suportam esses valores",
+   "Restauração testada com sucesso"
+  ]
+ },
+ "56": {
+  "norma": "8.4.1; 8.4.2.1",
+  "kind": "documento",
+  "criteria": [
+   "Estrutura de resposta com equipes responsáveis definida",
+   "Estrutura permite aviso e comunicação oportuna às partes interessadas",
+   "Planos e procedimentos para gerenciar a organização durante a disrupção e ativar as soluções"
+  ]
+ },
+ "57": {
+  "norma": "8.4.2.2; 8.4.2.4 a, b",
+  "kind": "documento",
+  "criteria": [
+   "Papéis e relacionamento entre as equipes definidos",
+   "Titulares e suplentes identificados, com responsabilidade, autoridade e competência",
+   "Procedimentos documentados para guiar cada equipe (ativação, operação, coordenação e comunicação)"
+  ]
+ },
+ "58": {
+  "norma": "8.4.2.3 a–h",
+  "kind": "documento",
+  "criteria": [
+   "Avaliar natureza e impacto da disrupção",
+   "Critério para iniciar a resposta formal",
+   "Acionar a resposta adequada",
+   "Prioridades definidas, com a vida em primeiro lugar",
+   "Monitorar efeitos da disrupção",
+   "Comunicar partes interessadas, autoridades e mídia",
+   "Planejar as ações que precisam ser realizadas",
+   "Acionar as soluções de continuidade"
+  ]
+ },
+ "59": {
+  "norma": "8.4.3.1 a–f; 8.4.3.2 a, b",
+  "kind": "documento",
+  "criteria": [
+   "Comunicação interna e externa (o que, quando, com quem, como)",
+   "Receber e responder a alertas de autoridades",
+   "Meios de comunicação disponíveis durante o incidente",
+   "Registro do incidente, ações e decisões",
+   "Comunicação estruturada com equipes de emergência",
+   "Estratégia de comunicação com a mídia após o incidente",
+   "Alertar as partes interessadas potencialmente impactadas por incidente real ou iminente",
+   "Coordenação e comunicação entre múltiplas organizações"
+  ]
+ },
+ "60": {
+  "norma": "8.4.3.2 (exercício dos procedimentos)",
+  "kind": "registro",
+  "criteria": [
+   "Procedimentos de aviso e comunicação exercitados em testes ou simulações"
+  ]
+ },
+ "61": {
+  "norma": "8.4.4.1; 8.4.4.3 a–h",
+  "kind": "documento",
+  "criteria": [
+   "Propósito, escopo e objetivos",
+   "Papéis e responsabilidades",
+   "Ações para implementar as soluções",
+   "Informações para ativar (critérios de ativação), operar, coordenar e comunicar as ações da equipe",
+   "Interdependências internas e externas",
+   "Recursos necessários",
+   "Requisitos de relatório",
+   "Processo de evacuação"
+  ]
+ },
+ "62": {
+  "norma": "8.4.1 a–d; 8.4.4.2 a, b, c",
+  "kind": "documento",
+  "criteria": [
+   "Limites predefinidos para ativar o plano",
+   "Ações para continuar ou recuperar as atividades em prazos predeterminados",
+   "Entrega de produtos e serviços na capacidade acordada",
+   "Procedimentos específicos sobre as medidas imediatas durante a disrupção",
+   "Procedimentos flexíveis às mudanças de condições internas e externas",
+   "Focados no impacto dos eventos e efetivos para minimizá-lo",
+   "Monitoramento do impacto da disrupção e da resposta da organização"
+  ]
+ },
+ "63": {
+  "norma": "8.4.4.2 d",
+  "kind": "documento",
+  "criteria": [
+   "Bem-estar das pessoas",
+   "Prevenção de perda adicional ou indisponibilidade",
+   "Impacto no ambiente"
+  ]
+ },
+ "64": {
+  "norma": "8.4.5",
+  "kind": "documento",
+  "criteria": [
+   "Procedimentos documentados para restaurar e retornar das medidas temporárias à operação normal"
+  ]
+ },
+ "65": {
+  "norma": "8.5",
+  "kind": "registro",
+  "criteria": [
+   "Programa de exercícios e testes planejado, com frequência",
+   "Exercícios efetivamente realizados"
+  ]
+ },
+ "66": {
+  "norma": "8.5 a, b, c, d",
+  "kind": "registro",
+  "criteria": [
+   "Cenários apropriados",
+   "Escopo e objetivos claramente definidos",
+   "Consistentes com os objetivos do SGCN",
+   "Desenvolvem trabalho em equipe, competência, confiança e conhecimento de quem tem papel na resposta",
+   "Validam as estratégias e soluções de continuidade em conjunto ao longo do tempo"
+  ]
+ },
+ "67": {
+  "norma": "8.5 e, f",
+  "kind": "registro",
+  "criteria": [
+   "Relatório formal pós-exercício",
+   "Resultados, recomendações e ações de melhoria",
+   "Exercícios analisados criticamente para promover a melhoria contínua"
+  ]
+ },
+ "68": {
+  "norma": "8.5 (agir sobre os resultados)",
+  "kind": "registro",
+  "criteria": [
+   "Ações de melhoria dos exercícios implementadas e concluídas"
+  ]
+ },
+ "69": {
+  "norma": "8.5 g",
+  "kind": "registro",
+  "criteria": [
+   "Exercícios em intervalos planejados",
+   "Exercício após mudanças significativas"
+  ]
+ },
+ "70": {
+  "norma": "8.6 a, b",
+  "kind": "registro",
+  "criteria": [
+   "BIA, riscos, estratégias, planos e procedimentos avaliados quanto à adequação e eficácia",
+   "Por revisões, exercícios, testes ou relatórios pós-incidente",
+   "Avaliações em intervalos planejados e diante de mudanças significativas"
+  ]
+ },
+ "71": {
+  "norma": "8.6 c",
+  "kind": "registro",
+  "criteria": [
+   "Capacidade de continuidade de parceiros e fornecedores pertinentes avaliada"
+  ]
+ },
+ "72": {
+  "norma": "8.6 d",
+  "kind": "registro",
+  "criteria": [
+   "Conformidade com requisitos legais avaliada",
+   "Conformidade com boas práticas, política e objetivos avaliada"
+  ]
+ },
+ "73": {
+  "norma": "8.6 e",
+  "kind": "registro",
+  "criteria": [
+   "Documentação e procedimentos atualizados em tempo hábil",
+   "Atualização após incidente ou ativação"
+  ]
+ },
+ "74": {
+  "norma": "9.1 a–d",
+  "kind": "registro",
+  "criteria": [
+   "Definido o que, como, quando e por quem monitorar e medir",
+   "Quando e por quem os resultados são analisados e avaliados"
+  ]
+ },
+ "75": {
+  "norma": "9.1 (reter e avaliar)",
+  "kind": "registro",
+  "criteria": [
+   "Desempenho e eficácia do SGCN avaliados",
+   "Informação documentada retida como evidência dos resultados"
+  ]
+ },
+ "76": {
+  "norma": "9.2.1; 9.2.2 a",
+  "kind": "registro",
+  "criteria": [
+   "Programa de auditoria interna com frequência, métodos e responsáveis",
+   "Auditoria interna efetivamente realizada",
+   "Auditoria verifica conformidade com os requisitos da organização e da norma e se o SGCN é eficaz"
+  ]
+ },
+ "77": {
+  "norma": "9.2.2 a",
+  "kind": "documento",
+  "criteria": [
+   "Considera a importância dos processos e resultados de auditorias anteriores"
+  ]
+ },
+ "78": {
+  "norma": "9.2.2 b",
+  "kind": "documento",
+  "criteria": [
+   "Critérios e escopo definidos para cada auditoria"
+  ]
+ },
+ "79": {
+  "norma": "9.2.2 c",
+  "kind": "documento",
+  "criteria": [
+   "Auditores selecionados com objetividade e imparcialidade"
+  ]
+ },
+ "80": {
+  "norma": "9.2.2 d, e",
+  "kind": "registro",
+  "criteria": [
+   "Resultados relatados aos gestores pertinentes",
+   "Informação documentada retida como evidência"
+  ]
+ },
+ "81": {
+  "norma": "9.2.2 f, g",
+  "kind": "registro",
+  "criteria": [
+   "Ações corretivas realizadas sem atraso injustificado",
+   "Verificação das ações e reporte dos resultados"
+  ]
+ },
+ "82": {
+  "norma": "9.3.1",
+  "kind": "registro",
+  "criteria": [
+   "Análise crítica pela direção em intervalos planejados",
+   "Análise crítica efetivamente realizada (ata)"
+  ]
+ },
+ "83": {
+  "norma": "9.3.2 a–k",
+  "kind": "registro",
+  "criteria": [
+   "Situação de ações de análises anteriores",
+   "Mudanças em questões internas e externas",
+   "Desempenho do SGCN e tendências (NCs, medições, auditorias)",
+   "Feedback das partes interessadas",
+   "Necessidade de mudanças no SGCN, incluindo política e objetivos",
+   "Procedimentos e recursos que podem melhorar o desempenho e a eficácia do SGCN",
+   "Informação do processo de avaliação de riscos e da BIA",
+   "Resultados da avaliação da documentação e da capacidade (8.6)",
+   "Riscos ou questões não endereçados adequadamente em avaliações de riscos anteriores",
+   "Lições de quase acidentes e disrupções",
+   "Oportunidades de melhoria"
+  ]
+ },
+ "84": {
+  "norma": "9.3.3.1 a–d",
+  "kind": "registro",
+  "criteria": [
+   "Decisões sobre melhoria e mudanças no SGCN (escopo, BIA, riscos, estratégias, planos)",
+   "Como a eficácia dos controles será medida"
+  ]
+ },
+ "85": {
+  "norma": "9.3.3.2",
+  "kind": "registro",
+  "criteria": [
+   "Informação documentada retida como evidência",
+   "Resultados comunicados às partes interessadas",
+   "Ações apropriadas realizadas"
+  ]
+ },
+ "86": {
+  "norma": "10.1.2 a",
+  "kind": "registro",
+  "criteria": [
+   "Reação à não conformidade: controle, correção e consequências"
+  ]
+ },
+ "87": {
+  "norma": "10.1.2 b",
+  "kind": "registro",
+  "criteria": [
+   "Causa da não conformidade determinada",
+   "Verificado se existem ou podem ocorrer não conformidades similares"
+  ]
+ },
+ "88": {
+  "norma": "10.1.2 c, d, e",
+  "kind": "registro",
+  "criteria": [
+   "Ação implementada",
+   "Eficácia da ação analisada criticamente",
+   "Mudanças no SGCN quando necessário",
+   "Ações corretivas apropriadas aos efeitos das não conformidades"
+  ]
+ },
+ "89": {
+  "norma": "10.1.3",
+  "kind": "registro",
+  "criteria": [
+   "Registro da natureza das não conformidades e ações tomadas",
+   "Resultados das ações corretivas registrados"
+  ]
+ },
+ "90": {
+  "norma": "10.1.1; 10.2",
+  "kind": "registro",
+  "criteria": [
+   "Melhoria com base em medidas qualitativas e quantitativas",
+   "Considera resultados da análise e da análise crítica pela direção",
+   "Oportunidades de melhoria determinadas e ações implementadas para alcançar os resultados pretendidos"
+  ]
+ }
+}

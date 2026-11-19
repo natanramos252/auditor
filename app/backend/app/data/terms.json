@@ -1,0 +1,46 @@
+{
+  "version": "1.0",
+  "title": "Termos de Uso e Aviso de Privacidade",
+  "sections": [
+    {
+      "title": "1. O que a plataforma faz",
+      "body": "A plataforma ajuda uma organização a se preparar para uma auditoria externa de certificação na ABNT NBR ISO 22301:2020 (continuidade de negócios). Você anexa documentos, o sistema sugere respostas para um questionário e recorta trechos como evidência, e você valida. No fim, gera um diagnóstico de maturidade com pontos fortes e melhorias."
+    },
+    {
+      "title": "2. O resultado é um diagnóstico, não uma certificação",
+      "body": "O relatório é um diagnóstico preparatório baseado em autoavaliação. Ele não substitui a auditoria de um organismo certificador acreditado e não garante a certificação. As sugestões de resposta, feitas por regras e por inteligência artificial, podem errar: nenhuma resposta vale na pontuação até você validá-la, e você é responsável pelas respostas que validar."
+    },
+    {
+      "title": "3. Seus documentos e dados pessoais",
+      "body": "Você declara ter o direito de enviar os documentos que anexar e se compromete a não enviar dados pessoais ou sigilosos além do necessário (por exemplo, nomes, telefones e e-mails de contatos de emergência). Os documentos, as respostas e os relatórios ficam armazenados no servidor em que esta plataforma está instalada, sob responsabilidade de quem a opera (veja a seção 10). Os dados são usados somente para gerar a sua avaliação."
+    },
+    {
+      "title": "4. Uso de inteligência artificial",
+      "body": "@AI@"
+    },
+    {
+      "title": "5. Direitos autorais da norma",
+      "body": "O texto da ISO 22301 é protegido por direitos autorais da ISO e da ABNT. A plataforma não distribui a norma: as perguntas e os critérios são resumos de requisitos, e não substituem a leitura do texto oficial. Para a certificação, adquira a norma."
+    },
+    {
+      "title": "6. Segurança desta versão",
+      "body": "Esta é uma versão de demonstração e desenvolvimento. Ela ainda não tem login, separação entre empresas nem trilha completa de alterações. Não a exponha à internet e não use dados de produção altamente sensíveis até que esses controles sejam implantados."
+    },
+    {
+      "title": "7. Sem garantias",
+      "body": "A plataforma é fornecida como está. Seus responsáveis não respondem por decisões tomadas com base no diagnóstico, nem por perdas decorrentes de falhas, indisponibilidade ou erros das sugestões automáticas."
+    },
+    {
+      "title": "8. Retenção e exclusão",
+      "body": "As avaliações permanecem armazenadas até serem removidas pelo responsável pela instalação. Para pedir a exclusão dos seus dados, ou exercer os demais direitos previstos na Lei Geral de Proteção de Dados (LGPD, Lei 13.709/2018), fale com o responsável indicado na seção 10."
+    },
+    {
+      "title": "9. Seu aceite fica registrado",
+      "body": "Ao aceitar, registramos o seu nome, a data e a hora, a versão destes termos e uma impressão digital (hash) do texto aceito. Se os termos mudarem de versão, será preciso aceitar de novo para continuar."
+    },
+    {
+      "title": "10. Responsável pela instalação",
+      "body": "@OPERATOR@"
+    }
+  ]
+}

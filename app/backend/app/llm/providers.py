@@ -49,7 +49,7 @@ class OpenAI(LLMProvider):
     name = "openai"
 
     def __init__(self):
-        if not config.OPENAI_API_KEY and "api.openai.com" in config.OPENAI_BASE_URL:
+        if config.key_missing("openai"):
             raise LLMError("OPENAI_API_KEY não definida")
         self.model = config.LLM_MODEL or "gpt-4o-mini"
 
@@ -92,7 +92,7 @@ class Mock(LLMProvider):
 
 
 def get_provider(name: str | None = None) -> LLMProvider:
-    name = (name or config.LLM_PROVIDER).lower()
+    name = (name or config.effective_provider()).lower()
     table = {"anthropic": Anthropic, "openai": OpenAI, "ollama": Ollama, "mock": Mock}
     if name not in table:
         raise LLMError(f"Provedor desconhecido: {name}")

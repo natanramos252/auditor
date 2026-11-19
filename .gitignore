@@ -11,3 +11,15 @@ __pycache__/
 # norma da ABNT: material com direitos autorais, não publicar
 1016989421-ISO-22301-2020.pdf
 1016989421-ISO-22301-2020.txt
+
+# material de trabalho que não faz parte do projeto
+resumo_conversa.txt
+levantamento_exigencias_N2.md
+v2_cobertura_alineas/
+docs/
+*.zip
+
+# restos de outro projeto (fluxo de consentimentos de áudio), não usados pelo auditor
+app/backend/app/api/
+app/backend/app/models/
+app/backend/app/schemas/

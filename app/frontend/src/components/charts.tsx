@@ -4,7 +4,7 @@ export const CAT = {
   atende: { label: "Atende", color: "var(--ok)" },
   parcial: { label: "Atende parcialmente", color: "var(--warn)" },
   nao: { label: "Não atende", color: "var(--err)" },
-  na: { label: "Não se aplica", color: "var(--muted)" },
+  na: { label: "Não se aplica", color: "var(--ink-2)" },
   pending: { label: "Não validado", color: "var(--line)" },
 } as const;
 export type Cat = keyof typeof CAT;
@@ -21,10 +21,10 @@ export function Gauge({ value, target }: { value: number; target: number }) {
   return (
     <svg viewBox="0 0 220 135" className="gauge" role="img" aria-label={`Maturidade ${Math.round(value)}%`}>
       {arc(0, 30, "var(--err)")}{arc(30, 55, "var(--warn)")}{arc(55, target, "#d6b400")}{arc(target, 100, "var(--ok)")}
-      <line x1={tx1} y1={ty1} x2={tx2} y2={ty2} stroke="var(--text)" strokeWidth={2} />
-      <line x1={C} y1={C} x2={nx} y2={ny} stroke="var(--text)" strokeWidth={3} strokeLinecap="round" />
-      <circle cx={C} cy={C} r={6} fill="var(--text)" />
-      <text x={C} y={C + 24} textAnchor="middle" fontSize="22" fontWeight="700" fill="var(--text)">{Math.round(value)}%</text>
+      <line x1={tx1} y1={ty1} x2={tx2} y2={ty2} stroke="var(--ink)" strokeWidth={2} />
+      <line x1={C} y1={C} x2={nx} y2={ny} stroke="var(--ink)" strokeWidth={3} strokeLinecap="round" />
+      <circle cx={C} cy={C} r={6} fill="var(--ink)" />
+      <text x={C} y={C + 24} textAnchor="middle" fontSize="22" fontWeight="700" fill="var(--ink)">{Math.round(value)}%</text>
     </svg>
   );
 }
@@ -45,8 +45,8 @@ export function Donut({ data }: { data: Record<Cat, number> }) {
         off += len;
         return el;
       })}
-      <text x={C} y={C - 2} textAnchor="middle" fontSize="24" fontWeight="700" fill="var(--text)">{total - data.pending}</text>
-      <text x={C} y={C + 15} textAnchor="middle" fontSize="10" fill="var(--muted)">de {total} validadas</text>
+      <text x={C} y={C - 2} textAnchor="middle" fontSize="24" fontWeight="700" fill="var(--ink)">{total - data.pending}</text>
+      <text x={C} y={C + 15} textAnchor="middle" fontSize="10" fill="var(--ink-2)">de {total} validadas</text>
     </svg>
   );
 }
@@ -62,7 +62,7 @@ export function Radar({ data, target }: { data: ClauseScore[]; target: number })
       {data.map((_, i) => <line key={i} x1={C} y1={C} x2={pt(i, 100)[0]} y2={pt(i, 100)[1]} stroke="var(--line)" />)}
       <polygon points={poly(data.map(() => target))} fill="none" stroke="var(--warn)" strokeDasharray="4 3" />
       <polygon points={poly(data.map(d => d.score))} fill="var(--accent-a)" stroke="var(--accent)" strokeWidth={2} />
-      {data.map((d, i) => { const [x, y] = pt(i, 118); return <text key={i} x={x} y={y} textAnchor="middle" dominantBaseline="middle" fontSize="11" fill="var(--text)">{d.clause_no}</text>; })}
+      {data.map((d, i) => { const [x, y] = pt(i, 118); return <text key={i} x={x} y={y} textAnchor="middle" dominantBaseline="middle" fontSize="11" fill="var(--ink)">{d.clause_no}</text>; })}
     </svg>
   );
 }

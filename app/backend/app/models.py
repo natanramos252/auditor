@@ -24,6 +24,19 @@ class Assessment(Base):
     analysis_provider: Mapped[str] = mapped_column(String(100), default="")
     documents: Mapped[list["Document"]] = relationship(cascade="all, delete-orphan", back_populates="assessment")
     answers: Mapped[list["Answer"]] = relationship(cascade="all, delete-orphan", back_populates="assessment")
+    acceptances: Mapped[list["TermsAcceptance"]] = relationship(cascade="all, delete-orphan", back_populates="assessment", order_by="TermsAcceptance.id")
+
+
+class TermsAcceptance(Base):
+    """Registro de aceite dos termos de uso por avaliação (um por versão aceita)."""
+    __tablename__ = "terms_acceptances"
+    id: Mapped[int] = mapped_column(primary_key=True)
+    assessment_id: Mapped[int] = mapped_column(ForeignKey("assessments.id"))
+    version: Mapped[str] = mapped_column(String(20))
+    text_hash: Mapped[str] = mapped_column(String(64))
+    accepted_by: Mapped[str] = mapped_column(String(200))
+    accepted_at: Mapped[datetime] = mapped_column(DateTime, default=now)
+    assessment: Mapped["Assessment"] = relationship(back_populates="acceptances")
 
 
 class Document(Base):
@@ -39,6 +52,18 @@ class Document(Base):
     uploaded_at: Mapped[datetime] = mapped_column(DateTime, default=now)
     assessment: Mapped[Assessment] = relationship(back_populates="documents")
     chunks: Mapped[list["Chunk"]] = relationship(cascade="all, delete-orphan", back_populates="document")
+    covers: Mapped[list["DocumentSlot"]] = relationship(cascade="all, delete-orphan", back_populates="document", lazy="selectin")
+
+
+class DocumentSlot(Base):
+    """Tipo de documento que um arquivo principal (slot="principal") cobre, detectado em Python ou marcado pelo usuário."""
+    __tablename__ = "document_slots"
+    id: Mapped[int] = mapped_column(primary_key=True)
+    document_id: Mapped[int] = mapped_column(ForeignKey("documents.id"))
+    slot: Mapped[str] = mapped_column(String(50))
+    score: Mapped[float] = mapped_column(Float, default=0)
+    reason: Mapped[str] = mapped_column(Text, default="")
+    document: Mapped[Document] = relationship(back_populates="covers")
 
 
 class Chunk(Base):
@@ -71,5 +96,7 @@ class Answer(Base):
     ai_justification: Mapped[str] = mapped_column(Text, default="")
     ai_missing: Mapped[list] = mapped_column(JSON, default=list)
     evidence: Mapped[list] = mapped_column(JSON, default=list)
+    ai_criteria: Mapped[list] = mapped_column(JSON, default=list)  # [{text, status, quote}] por critério da norma
+    claude_review: Mapped[dict | None] = mapped_column(JSON, nullable=True)  # parecer do revisor Claude (ver /reviews)
     updated_at: Mapped[datetime] = mapped_column(DateTime, default=now, onupdate=now)
     assessment: Mapped[Assessment] = relationship(back_populates="answers")

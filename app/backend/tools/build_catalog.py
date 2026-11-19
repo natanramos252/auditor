@@ -33,7 +33,7 @@ SLOTS = [
 ]
 
 # Requisitos obrigatórios que impedem a classificação "pronta" se ficarem abaixo do nível 3.
-BLOCKING = {8, 18, 25, 42, 45, 46, 48, 61, 65, 76, 82, 86}
+BLOCKING = {6, 8, 18, 25, 42, 45, 46, 48, 50, 56, 61, 65, 76, 82, 86}
 
 
 def main(xlsx, out):

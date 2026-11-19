@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { api } from "../api";
-import type { Assessment, Catalog, Evidence, Item, Level } from "../types";
+import type { Assessment, Catalog, CriterionResult, Evidence, Item, Level } from "../types";
 
 type Filter = "todas" | "analisadas" | "validar" | "sem_ia" | "falhas" | "validadas";
 export const failed = (i: Item) => i.ai_justification.startsWith("[falha]");
@@ -17,6 +17,54 @@ function Quote({ ev }: { ev: Evidence }) {
       {found ? (<>{from > 0 && "… "}{c.slice(from, s)}<mark>{q}</mark>{c.slice(s + q.length, to)}{to < c.length && " …"}</>) : <mark>{q}</mark>}
       {found && c.length > q.length + 320 && <button className="link" onClick={() => setOpen(!open)}>{open ? "menos contexto" : "mais contexto"}</button>}
     </blockquote>
+  );
+}
+
+const ICON = { atendido: "✓", parcial: "◐", ausente: "✕" } as const;
+const WORD = { atendido: "atendido", parcial: "parcial", ausente: "ausente" } as const;
+
+function Criteria({ list, plain }: { list: CriterionResult[]; plain: string[] }) {
+  const rows = list.length ? list : plain.map(text => ({ text, status: null as null, quote: "" }));
+  return (
+    <ul className="crit">
+      {rows.map(c => (
+        <li key={c.text} className={c.status ?? "plain"}>
+          <span className="ic" aria-label={c.status ? WORD[c.status] : undefined}>{c.status ? ICON[c.status] : "•"}</span>
+          <span>{c.text}{"note" in c && c.note ? <em className="muted small"> {c.note}</em> : null}</span>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+const VERDICT = { comprova: "comprova", parcial: "comprova em parte", nao_comprova: "não comprova" } as const;
+
+function ClaudeBox({ item, levels, adopt, busy }: { item: Item; levels: Level[]; adopt: () => void; busy: boolean }) {
+  const r = item.claude_review;
+  if (!r) return null;
+  return (
+    <div className="claude">
+      <div className="ai-h">
+        <b>Parecer do {r.reviewer}</b>
+        <span>{r.level === null ? "não há evidência suficiente para sugerir" : <>sugere: <b>{levels[r.level].name}</b></>}</span>
+      </div>
+      {r.justification && <p>{r.justification}</p>}
+      <Criteria list={r.criteria as CriterionResult[]} plain={item.criteria} />
+      {r.evidence.length > 0 && (
+        <div className="cev">
+          {r.evidence.map((e, i) => (
+            <div key={i} className={`cev-row v-${e.verdict}`}>
+              <span className="chip">{VERDICT[e.verdict]}</span>
+              <span className="muted small">{e.doc_name}{e.page ? `, pág. ${e.page}` : ""}</span>
+              <blockquote>{e.quote}</blockquote>
+              {e.reason && <p className="muted small">{e.reason}</p>}
+            </div>
+          ))}
+        </div>
+      )}
+      {r.missing.length > 0 && <ul className="missing">{r.missing.map(m => <li key={m}>Falta: {m}</li>)}</ul>}
+      <div className="row"><button className="secondary" disabled={busy} onClick={adopt}>Adotar este parecer</button><span className="muted small">Copia nível e evidências para a resposta. Você ainda valida.</span></div>
+    </div>
   );
 }
 
@@ -53,14 +101,16 @@ function ItemCard({ item, levels, assessmentId, onSaved, onNext }: { item: Item;
     catch (e) { setErr(e instanceof Error ? e.message : "Erro"); }
   };
 
-  const statusLabel = item.status === "validated" ? "Validada" : item.status === "suggested" ? "Sugerida pela IA — falta validar" : "Sem resposta";
+  const statusLabel = item.status === "validated" ? "Validada" : item.status === "suggested" ? "Sugerida pela IA, falta validar" : "Sem resposta";
   const conf = item.ai_confidence ?? 0;
 
   return (
     <article className={`item ${item.status}`} id={`item-${item.n}`}>
+      <div className="gutter"><span className={`mark ${item.status}`} role="img" aria-label={statusLabel} title={statusLabel} /><span className="num">{item.n}</span></div>
+      <div className="item-body">
       <div className="item-h">
-        <span className="num">{item.n}</span>
-        <span className="muted">Cláusula {item.subclause || item.clause}</span>
+        <span className="muted">Cláusula {item.norma || item.subclause}</span>
+        <span className="chip" title={item.kind === "registro" ? "A norma pede execução e informação documentada como prova" : "A norma pede que exista e esteja definido"}>{item.kind === "registro" ? "exige registro de execução" : "exige documento"}</span>
         {item.blocking && <span className="chip warn" title="Requisito obrigatório: precisa estar como Atende para a classificação pronta">bloqueante</span>}
         <span className={`chip st-${item.status}`}>{statusLabel}</span>
       </div>
@@ -76,9 +126,19 @@ function ItemCard({ item, levels, assessmentId, onSaved, onNext }: { item: Item;
             {item.ai_level !== null && <span className="conf" title={`Confiança ${Math.round(conf * 100)}%`}><i style={{ width: `${conf * 100}%` }} /></span>}
           </div>
           {item.ai_justification && <p>{item.ai_justification}</p>}
+          {item.ai_criteria.length > 0 && <Criteria list={item.ai_criteria} plain={item.criteria} />}
           {item.ai_missing.length > 0 && <ul className="missing">{item.ai_missing.map(m => <li key={m}>Falta: {m}</li>)}</ul>}
         </div>
       ) : null}
+
+      {item.ai_criteria.length === 0 && (
+        <details className="manual"><summary>Critérios da norma ({item.criteria.length})</summary><Criteria list={[]} plain={item.criteria} /></details>
+      )}
+      <ClaudeBox item={item} levels={levels} busy={busy} adopt={async () => {
+        setBusy(true); setErr("");
+        try { onSaved(await api.adoptReview(assessmentId, item.n)); } catch (e) { setErr(e instanceof Error ? e.message : "Erro"); }
+        setBusy(false);
+      }} />
 
       <div className="levels" role="radiogroup" aria-label="Resposta">
         {levels.map(l => (
@@ -118,9 +178,10 @@ function ItemCard({ item, levels, assessmentId, onSaved, onNext }: { item: Item;
       <textarea className="comment" rows={2} placeholder="Comentário (opcional)" value={comment} onChange={e => setComment(e.target.value)} />
       {err && <div className="banner err small">{err}</div>}
       <div className="actions">
-        <button className="primary" disabled={busy || (!na && level === null)} onClick={() => save(true)}>{item.status === "validated" && !dirty ? "Validada ✓ (próxima)" : "Validar e ir para a próxima"}</button>
+        <button className="primary" disabled={busy || (!na && level === null)} onClick={() => save(true)}>{item.status === "validated" && !dirty ? "Validada, ir para a próxima" : "Validar e ir para a próxima"}</button>
         <button className="secondary" disabled={busy || !dirty} onClick={() => save(false)}>Salvar sem validar</button>
         {dirty && <span className="muted small">alterações não salvas</span>}
+      </div>
       </div>
     </article>
   );
@@ -144,6 +205,13 @@ export default function Questionnaire({ catalog, assessment, done }: { catalog: 
     return [...m.values()].sort((a, b) => a.no - b.no);
   }, [items]);
 
+  const withReview = items.filter(i => i.claude_review && i.status !== "validated").length;
+  const [adopting, setAdopting] = useState(false);
+  const adoptAll = async () => {
+    if (!confirm(`Adotar o parecer do Claude em ${withReview} itens? Os níveis e evidências serão preenchidos, mas nada é validado: você ainda confere item por item.`)) return;
+    setAdopting(true);
+    try { await api.adoptAll(assessment.id); setItems(await api.items(assessment.id)); } finally { setAdopting(false); }
+  };
   const validated = items.filter(i => i.status === "validated").length;
   const toValidate = items.filter(i => i.status === "suggested").length;
   const shown = items.filter(i => i.clause_no === clause && (
@@ -163,13 +231,14 @@ export default function Questionnaire({ catalog, assessment, done }: { catalog: 
     <div className="qwrap">
       <aside className="side">
         <div className="prog"><b>{validated}</b> / {items.length} validadas<div className="bar"><i style={{ width: `${(validated / Math.max(items.length, 1)) * 100}%` }} /></div></div>
+        {withReview > 0 && <button className="secondary wide" disabled={adopting} onClick={adoptAll}>{adopting ? "Adotando…" : `Adotar parecer do Claude (${withReview})`}</button>}
         {toValidate > 0 && <p className="muted small">{toValidate} sugestão(ões) da IA aguardando sua validação.</p>}
         {clauses.map(c => (
           <button key={c.no} className={`clause ${c.no === clause ? "on" : ""}`} onClick={() => setClause(c.no)}>
             <span>{c.name}</span><span className={`cnt ${c.ok === c.total ? "full" : ""}`}>{c.ok}/{c.total}</span>
           </button>
         ))}
-        <button className="primary wide" onClick={done}>Ver painel e relatório →</button>
+        <button className="primary wide" onClick={done}>Ver painel e relatório</button>
       </aside>
       <section className="qmain">
         <div className="filters">

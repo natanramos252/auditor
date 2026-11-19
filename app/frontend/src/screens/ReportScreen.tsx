@@ -14,17 +14,17 @@ export default function ReportScreen({ catalog, assessment, back }: { catalog: C
   return (
     <div className="report">
       <div className="page-h noprint">
-        <button className="link" onClick={back}>← Voltar ao questionário</button>
+        <button className="link" onClick={back}>Voltar ao painel</button>
         <button className="primary" onClick={() => window.print()}>Imprimir / salvar em PDF</button>
       </div>
       <h1>Relatório de prontidão — {r.company}</h1>
-      <p className="muted">{r.norm}{r.sector ? ` · ${r.sector}` : ""}{r.scope ? ` · Escopo: ${r.scope}` : ""}</p>
+      <p className="muted">{[r.norm, r.sector, r.scope && `Escopo: ${r.scope}`].filter(Boolean).join(", ")}</p>
 
       {s.completeness < 1 && <div className="banner warn">Apenas {s.validated} de {s.total} perguntas foram validadas. Itens não validados contam como "Não atende" na pontuação, então o resultado abaixo está subestimado.</div>}
 
       <section className={`hero ${tone}`}>
         <div>
-          <div className="score">{Math.round(s.overall)}<small>% de atendimento</small></div>
+          <div className="score">{Math.round(s.overall)}%<small>de atendimento</small></div>
           <div className="band">{s.band}</div>
           <p>{s.band_description}</p>
           <p className="muted small">Confiança do diagnóstico: {Math.round(s.confidence * 100)}% · {s.downgraded > 0 ? `${s.downgraded} item(ns) rebaixado(s) por falta de evidência` : "sem rebaixamentos por falta de evidência"}</p>

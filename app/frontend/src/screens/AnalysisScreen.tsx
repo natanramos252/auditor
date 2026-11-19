@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { api } from "../api";
-import type { Assessment, Item } from "../types";
+import type { Assessment, Catalog, Item } from "../types";
 import { analyzed, failed } from "./Questionnaire";
 
 const LABEL = ["Não atende", "Atende parcialmente", "Atende"];
@@ -41,7 +41,7 @@ function Evaluated({ id, running }: { id: number; running: boolean }) {
   );
 }
 
-export default function AnalysisScreen({ assessment, refresh, next, back, llm }: { assessment: Assessment; refresh: () => Promise<Assessment>; next: () => void; back: () => void; llm: string }) {
+export default function AnalysisScreen({ assessment, refresh, next, back, llm }: { assessment: Assessment; refresh: () => Promise<Assessment>; next: () => void; back: () => void; llm: Catalog["llm"] }) {
   const a = assessment.analysis;
   const timer = useRef<number>();
 
@@ -59,17 +59,25 @@ export default function AnalysisScreen({ assessment, refresh, next, back, llm }:
       <h1>Análise dos documentos</h1>
       <div className="card">
         <p>Para cada uma das 90 perguntas, a plataforma procura nos seus documentos os trechos que comprovam o requisito, sugere se o requisito atende e recorta a evidência. <b>Nada vale até você validar.</b></p>
-        <p className="muted">Motor de análise: <b>{llm === "mock" ? "modo demonstração (busca por palavras, sem IA)" : a.provider || llm}</b></p>
-        {llm === "mock" && <div className="banner warn small">Sem IA configurada, as sugestões são só uma busca por palavras-chave e têm baixa confiança. Defina LLM_PROVIDER para obter análise completa.</div>}
-        {a.status === "idle" && <button className="primary" onClick={start}>Iniciar análise</button>}
+        <p className="muted">Motor de análise: <b>{llm.provider === "mock" ? "sem IA (busca por palavras)" : a.provider || llm.provider}</b></p>
+        {llm.provider === "mock" && (
+          <div className="banner warn small">
+            {llm.missing_key
+              ? <>A IA está configurada ({llm.configured}), mas falta a chave. Sem ela, as sugestões são só busca por palavras e têm baixa confiança. Coloque a chave em <code>OPENAI_API_KEY</code> (ou <code>ANTHROPIC_API_KEY</code>) no arquivo <code>.env</code> e reinicie a API. Com o freellmapi, gere a chave no painel dele (http://localhost:3001).</>
+              : <>Sem IA configurada, as sugestões são só busca por palavras e têm baixa confiança. Defina LLM_PROVIDER no <code>.env</code> para obter a análise completa.</>}
+          </div>
+        )}
+        {a.status === "idle" && <div className="row"><button className="primary" onClick={start}>Iniciar análise</button></div>}
         {a.status === "running" && (<><div className="bar"><i style={{ width: `${pct}%` }} /></div><p>{a.done} de {a.total} requisitos analisados ({pct}%)</p></>)}
-        {a.status === "error" && (<><div className="banner err">{a.error || "A análise falhou."}</div><button className="primary" onClick={start}>Tentar novamente</button></>)}
+        {a.status === "error" && (<><div className="banner err">{a.error || "A análise falhou."}</div><div className="row"><button className="primary" onClick={start}>Tentar novamente</button></div></>)}
         {a.status === "done" && (<>
           <div className="banner ok">Análise concluída. {a.error && <span>Avisos: {a.error}</span>}</div>
-          <button className="primary" onClick={next}>Revisar o questionário →</button>
-          <button className="link" onClick={start}>Reanalisar (mantém o que você já validou)</button>
+          <div className="row">
+            <button className="primary" onClick={next}>Revisar o questionário</button>
+            <button className="link" onClick={start}>Reanalisar (mantém o que você já validou)</button>
+          </div>
         </>)}
-        <div><button className="link" onClick={back}>← Voltar aos documentos</button></div>
+        <div style={{ marginTop: 14 }}><button className="link" onClick={back}>Voltar aos documentos</button></div>
       </div>
       {a.status !== "idle" && <Evaluated id={assessment.id} running={a.status === "running"} />}
     </div>

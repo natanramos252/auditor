@@ -3,3 +3,6 @@ __pycache__
 data
 tests
 .pytest_cache
+app/api
+app/models
+app/schemas

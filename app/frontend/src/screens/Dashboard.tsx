@@ -10,30 +10,29 @@ export default function Dashboard({ catalog, assessment, goQuestionnaire, goRepo
   const s = r.scores, d = s.distribution;
   const name = (no: number) => catalog.items.find(i => i.clause_no === no)?.clause.replace(/^\d+\.\s*/, "") ?? "";
   const blockersOpen = s.blockers.length;
-  const tone = s.ready ? "ok" : s.overall >= 55 ? "mid" : "low";
-  const worst = [...s.clauses].filter(c => c.items > 0).sort((a, b) => a.score - b.score).slice(0, 3);
+    const worst = [...s.clauses].filter(c => c.items > 0).sort((a, b) => a.score - b.score).slice(0, 3);
 
   return (
     <div>
       <div className="page-h">
         <div>
           <h1>Painel de maturidade</h1>
-          <p className="muted">{r.company} · {r.norm}. Atualiza conforme você valida o questionário.</p>
+          <p className="muted">{r.company}, {r.norm}. Atualiza conforme você valida o questionário.</p>
         </div>
         <div className="row">
           <button className="secondary" onClick={goQuestionnaire}>Continuar validando</button>
-          <button className="primary" onClick={goReport}>Relatório completo →</button>
+          <button className="primary" onClick={goReport}>Relatório completo</button>
         </div>
       </div>
 
       {s.completeness < 1 && <div className="banner warn">{s.validated} de {s.total} perguntas validadas. Itens não validados contam como "Não atende", então os números estão subestimados até você terminar.</div>}
 
-      <div className="kpis">
-        <div className={`kpi ${tone}`}><span>Grau de maturidade</span><b>{Math.round(s.overall)}%</b><em>{s.band}</em></div>
-        <div className="kpi"><span>Validação</span><b>{Math.round(s.completeness * 100)}%</b><em>{s.validated} de {s.total} perguntas</em></div>
-        <div className={`kpi ${blockersOpen ? "low" : "ok"}`}><span>Bloqueantes pendentes</span><b>{blockersOpen}</b><em>de {r.stats.blockers_total} requisitos obrigatórios</em></div>
-        <div className="kpi"><span>Evidências aceitas</span><b>{r.stats.evidences_accepted}</b><em>{r.stats.ai_suggested} sugestões da IA</em></div>
-        <div className="kpi"><span>Confiança</span><b>{Math.round(s.confidence * 100)}%</b><em>{s.downgraded} rebaixado(s) sem evidência</em></div>
+      <div className="ledger">
+        <div className="cell lead-cell"><span>Grau de maturidade</span><b>{Math.round(s.overall)}%</b><em>{s.band}</em></div>
+        <div className="cell"><span>Validação</span><b>{Math.round(s.completeness * 100)}%</b><em>{s.validated} de {s.total} perguntas</em></div>
+        <div className={`cell ${blockersOpen ? "low" : "ok"}`}><span>Bloqueantes pendentes</span><b>{blockersOpen}</b><em>de {r.stats.blockers_total} obrigatórios</em></div>
+        <div className="cell"><span>Evidências aceitas</span><b>{r.stats.evidences_accepted}</b><em>{r.stats.ai_suggested} sugestões da IA</em></div>
+        <div className="cell"><span>Confiança</span><b>{Math.round(s.confidence * 100)}%</b><em>{s.downgraded} rebaixado(s) sem evidência</em></div>
       </div>
 
       <div className="dgrid">

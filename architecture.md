@@ -166,7 +166,7 @@
 
 Para começar a desenvolvimento, sugiro:
 
-1. **Criar o repositório base** em `/home/natan/auditor` com a estrutura de dados e o backend FastAPI minimal.
+1. **Criar o repositório base** na raiz do projeto com a estrutura de dados e o backend FastAPI minimal.
 2. **Implementar o SAST Agent** primeiro (é o núcleo da segurança de código).
 3. **Integrar com um LLM** (ex: CodeLlama ou DeepSeek Coder) para gerar as descrições de vulnerabilidades.
 

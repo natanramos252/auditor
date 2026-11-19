@@ -1,0 +1,40 @@
+#!/usr/bin/env bash
+# Bloqueia o commit se houver chave de API, arquivo de segredo, dados de usuários ou material com direitos autorais.
+# Ativar (uma vez por clone):  git config core.hooksPath .githooks
+set -u
+
+staged=$(git diff --cached --name-only --diff-filter=ACMR)
+[ -z "$staged" ] && exit 0
+fail=0
+
+# 1) arquivos que nunca devem subir
+forbidden='(^|/)\.env(\..*)?$|(^|/)\.encryption_key$|\.(db|sqlite3?|pem|key|p12|pfx)$|(^|/)uploads/|ISO-22301.*\.(pdf|txt)$|\.zip$'
+bad=$(echo "$staged" | grep -E "$forbidden" | grep -vE '(^|/)\.env\.example$')
+if [ -n "$bad" ]; then
+  echo "BLOQUEADO: arquivos que não devem ir para o repositório:"; echo "$bad" | sed 's/^/  - /'; fail=1
+fi
+
+# 2) padrões de chave nas linhas adicionadas
+patterns='sk-[A-Za-z0-9_-]{16,}|sk-ant-[A-Za-z0-9_-]{16,}|ghp_[A-Za-z0-9]{20,}|github_pat_[A-Za-z0-9_]{20,}|AIza[0-9A-Za-z_-]{30,}|AKIA[0-9A-Z]{16}|gsk_[A-Za-z0-9]{20,}|xox[baprs]-[A-Za-z0-9-]{10,}|freellma[A-Za-z0-9_-]{10,}|-----BEGIN [A-Z ]*PRIVATE KEY-----'
+hits=$(git diff --cached -U0 --diff-filter=ACMR | grep -E '^\+' | grep -vE '^\+\+\+' | grep -E "$patterns")
+if [ -n "$hits" ]; then
+  echo "BLOQUEADO: parece haver uma chave de API nas linhas adicionadas:"; echo "$hits" | cut -c1-80 | sed 's/^/  /'; fail=1
+fi
+
+# 3) variáveis de chave com valor preenchido
+vars=$(git diff --cached -U0 --diff-filter=ACMR | grep -E '^\+' | grep -E "^\+[[:space:]]*(ANTHROPIC_API_KEY|OPENAI_API_KEY|ENCRYPTION_KEY|POSTGRES_PASSWORD)[[:space:]]*[=:][[:space:]]*[\"']?[A-Za-z0-9_./+=-]{8,}[\"']?[[:space:]]*$")
+if [ -n "$vars" ]; then
+  echo "BLOQUEADO: variável de chave ou senha com valor preenchido:"; echo "$vars" | sed -E 's/(=|:)\s*.{3}.*/\1 <oculto>/' | sed 's/^/  /'; fail=1
+fi
+
+# 4) caminhos locais e e-mails pessoais
+personal=$(git diff --cached -U0 --diff-filter=ACMR | grep -E '^\+' | grep -vE '^\+\+\+' | grep -E '/home/[a-z]+/|[A-Za-z0-9._-]+@(gmail|hotmail|outlook|yahoo|fatec)\.[a-z.]+')
+if [ -n "$personal" ]; then
+  echo "ATENÇÃO: caminho local ou e-mail pessoal nas linhas adicionadas:"; echo "$personal" | cut -c1-90 | sed 's/^/  /'; fail=1
+fi
+
+if [ "$fail" -ne 0 ]; then
+  echo; echo "Commit cancelado. Corrija e tente de novo (para ignorar de propósito: git commit --no-verify)."
+  exit 1
+fi
+exit 0
